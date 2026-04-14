@@ -54,7 +54,7 @@
                         <a class="nav-link" href="service.html">Service</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
+                        <a class="nav-link" href="Curriculum.html">Curriculum</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
@@ -65,6 +65,7 @@
          </div>
       </div>
       <!-- header section end -->
+     
       <!-- portfolio section start -->
       <div class="portfolio_section layout_padding">
          <div class="container">
@@ -73,79 +74,248 @@
                   <h1 class="portfolio_taital">My <span class="portfolio_taital_1">Portfolio</span></h1>
                </div>
             </div>
-            <div class="portfolio_section">
-               <div class="portfolio_section_2">
-                  <div class="row">
-                     <div class="col-md-8">
-                        <div class="container_main">
-                           <img src="images/img-1.png" alt="" class="image">
-                           <div class="overlay">
-                              <div class="text">
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="container_main">
-                           <img src="images/img-2.png" alt="" class="image">
-                           <div class="overlay">
-                              <div class="text">
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="portfolio_section_2">
-                  <div class="row">
-                     <div class="col-md-4">
-                        <div class="container_main">
-                           <img src="images/img-3.png" alt="" class="image">
-                           <div class="overlay">
-                              <div class="text">
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="container_main">
-                           <img src="images/img-4.png" alt="" class="image">
-                           <div class="overlay">
-                              <div class="text">
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="container_main">
-                           <img src="images/img-5.png" alt="" class="image">
-                           <div class="overlay">
-                              <div class="text">
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="seemore_bt"><a href="#">See More</a></div>
-         </div>
+<section class="project">
+
+  <div class="project-header fade-in">
+    <h1>🤖 Robot Suiveur Autonome</h1>
+    <p class="subtitle">
+      Robot intelligent capable de suivre un utilisateur grâce au GPS, Bluetooth et capteurs embarqués.
+    </p>
+  </div>
+
+  <div class="project-content">
+
+    <!-- LEFT -->
+    <div class="project-text slide-left">
+
+      <h2>👥 Équipe</h2>
+      <ul class="team">
+        <li>Paul PAQUIN</li>
+        <li>Grégoire PICHEREAU</li>
+        <li>Baptiste SCHMITT</li>
+        <li>Ruyi ZHENG</li>
+      </ul>
+
+      <h2>📌 Contexte</h2>
+      <p>
+        Projet réalisé à IMT Atlantique visant à développer un robot autonome capable de suivre un utilisateur et transporter une charge.
+      </p>
+
+            <h2>📌 Contexte</h2>
+      <p>
+        Projet réalisé à IMT Atlantique visant à développer un robot autonome capable de suivre un utilisateur et transporter une charge.
+      </p>
+
+      <h2>⚙️ Technologies</h2>
+      <div class="tech-stack">
+        <span>Arduino</span>
+        <span>C++</span>
+        <span>Android</span>
+        <span>Bluetooth</span>
+        <span>GPS</span>
       </div>
+
+      <h2>🧠 Fonctionnalités</h2>
+      <ul>
+        <li>Suivi automatique</li>
+        <li>Détection d’obstacles</li>
+        <li>Communication Bluetooth</li>
+        <li>Application Android</li>
+      </ul>
+
+      <a href="https://github.com/paulpaq98/RobotSuiveur" target="_blank" class="btn glow">
+        🔗 Voir le projet
+      </a>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="project-media slide-right">
+
+      <div class="image-card">
+        <img src="https://telefab.fr/wp-content/uploads/2018/06/image13-1024x557.jpg" alt="Robot">
+      </div>
+      <div class="image-card">
+        <img src="https://telefab.fr/wp-content/uploads/2018/06/image13-1024x557.jpg" alt="Robot">
+      </div>
+      <!-- Usage — paste wherever you need a code block -->
+<div class="code-block">
+  <div class="code-block-header">
+    <span>Moteur.h — C++</span>
+    <button class="copy-btn" onclick="
+      navigator.clipboard.writeText(this.closest('.code-block').querySelector('code').innerText);
+      this.textContent='Copié !';
+      setTimeout(()=>this.textContent='Copier',1500);
+    ">Copier</button>
+  </div>
+  <pre><code>
+
+// Classe Moteur — contrôle un moteur DC via L298N
+class Moteur {
+  private:
+    int pin_in1, pin_in2, pin_pwm;
+
+  public:
+    Moteur(int in1, int in2, int pwm) {
+      pin_in1 = in1;
+      pin_in2 = in2;
+      pin_pwm = pwm;
+      pinMode(in1, OUTPUT);
+      pinMode(in2, OUTPUT);
+      pinMode(pwm, OUTPUT);
+    }
+
+    void avancer(int vitesse) {
+      digitalWrite(pin_in1, HIGH);
+      digitalWrite(pin_in2, LOW);
+      analogWrite(pin_pwm, vitesse); // 0–255
+    }
+
+    void reculer(int vitesse) {
+      digitalWrite(pin_in1, LOW);
+      digitalWrite(pin_in2, HIGH);
+      analogWrite(pin_pwm, vitesse);
+    }
+
+    void arreter() {
+      digitalWrite(pin_in1, LOW);
+      digitalWrite(pin_in2, LOW);
+      analogWrite(pin_pwm, 0);
+    }
+};
+
+  </code></pre>
+</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="project">
+
+  <div class="project-header fade-in">
+    <h1>🤖 Robot Suiveur Autonome</h1>
+    <p class="subtitle">
+      Robot intelligent capable de suivre un utilisateur grâce au GPS, Bluetooth et capteurs embarqués.
+    </p>
+  </div>
+
+  <div class="project-content">
+
+    <!-- LEFT -->
+    <div class="project-text slide-left">
+
+      <h2>👥 Équipe</h2>
+      <ul class="team">
+        <li>Paul PAQUIN</li>
+        <li>Grégoire PICHEREAU</li>
+        <li>Baptiste SCHMITT</li>
+        <li>Ruyi ZHENG</li>
+      </ul>
+
+      <h2>📌 Contexte</h2>
+      <p>
+        Projet réalisé à IMT Atlantique visant à développer un robot autonome capable de suivre un utilisateur et transporter une charge.
+      </p>
+
+            <h2>📌 Contexte</h2>
+      <p>
+        Projet réalisé à IMT Atlantique visant à développer un robot autonome capable de suivre un utilisateur et transporter une charge.
+      </p>
+
+      <h2>⚙️ Technologies</h2>
+      <div class="tech-stack">
+        <span>Arduino</span>
+        <span>C++</span>
+        <span>Android</span>
+        <span>Bluetooth</span>
+        <span>GPS</span>
+      </div>
+
+      <h2>🧠 Fonctionnalités</h2>
+      <ul>
+        <li>Suivi automatique</li>
+        <li>Détection d’obstacles</li>
+        <li>Communication Bluetooth</li>
+        <li>Application Android</li>
+      </ul>
+
+      <a href="https://github.com/paulpaq98/RobotSuiveur" target="_blank" class="btn glow">
+        🔗 Voir le projet
+      </a>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="project-media slide-right">
+
+      <div class="image-card">
+        <img src="https://telefab.fr/wp-content/uploads/2018/06/image13-1024x557.jpg" alt="Robot">
+      </div>
+      <div class="image-card">
+        <img src="https://telefab.fr/wp-content/uploads/2018/06/image13-1024x557.jpg" alt="Robot">
+      </div>
+      <!-- Usage — paste wherever you need a code block -->
+<div class="code-block">
+  <div class="code-block-header">
+    <span>Moteur.h — C++</span>
+    <button class="copy-btn" onclick="
+      navigator.clipboard.writeText(this.closest('.code-block').querySelector('code').innerText);
+      this.textContent='Copié !';
+      setTimeout(()=>this.textContent='Copier',1500);
+    ">Copier</button>
+  </div>
+  <pre><code>
+
+// Classe Moteur — contrôle un moteur DC via L298N
+class Moteur {
+  private:
+    int pin_in1, pin_in2, pin_pwm;
+
+  public:
+    Moteur(int in1, int in2, int pwm) {
+      pin_in1 = in1;
+      pin_in2 = in2;
+      pin_pwm = pwm;
+      pinMode(in1, OUTPUT);
+      pinMode(in2, OUTPUT);
+      pinMode(pwm, OUTPUT);
+    }
+
+    void avancer(int vitesse) {
+      digitalWrite(pin_in1, HIGH);
+      digitalWrite(pin_in2, LOW);
+      analogWrite(pin_pwm, vitesse); // 0–255
+    }
+
+    void reculer(int vitesse) {
+      digitalWrite(pin_in1, LOW);
+      digitalWrite(pin_in2, HIGH);
+      analogWrite(pin_pwm, vitesse);
+    }
+
+    void arreter() {
+      digitalWrite(pin_in1, LOW);
+      digitalWrite(pin_in2, LOW);
+      analogWrite(pin_pwm, 0);
+    }
+};
+
+  </code></pre>
+</div>
+
+    </div>
+
+  </div>
+
+</section>
+		
+		
+		<!-- You can start editing here. -->
+
+
       <!-- portfolio section end -->
       <!-- footer section start -->
       <div class="footer_section">
