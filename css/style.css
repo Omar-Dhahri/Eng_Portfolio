@@ -493,11 +493,11 @@ button {
 .banner_taital {
     width: 100%;
     float: left;
-    font-size: 48px;
+    font-size: 44px;
     color: #fefefd;
     font-weight: bold;
     padding-bottom: 0px;
-    line-height: 70px;
+    line-height: 60px;
 }
 
 .banner_text {
