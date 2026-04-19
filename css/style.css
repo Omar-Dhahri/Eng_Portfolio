@@ -144,6 +144,147 @@ body {
 .image-card:hover img {
   transform: scale(1.05);
 }
+/*--------------------------------------------------------------------- Project Timeline begin ---------------------------------------------------------------------*/
+/* PROJECTS TIMELINE */
+.projects-timeline {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.tl-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 2.5rem;
+}
+
+.tl-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 36px;
+  flex-shrink: 0;
+}
+
+.tl-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #38bdf8;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tl-line {
+  width: 2px;
+  background: #e2e8f0;
+  flex: 1;
+  margin-top: 8px;
+  min-height: 30px;
+}
+
+.tl-item:last-child .tl-line {
+  display: none;
+}
+
+.tl-card {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+}
+
+.tl-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.tl-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+}
+
+.tl-desc {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+/* BADGES */
+.tl-badge {
+  font-size: 11px;
+  padding: 3px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-weight: 500;
+}
+
+.badge-starter    { background: #EAF3DE; color: #27500A; }
+.badge-beginner   { background: #EAF3DE; color: #27500A; }
+.badge-intermediate { background: #FAEEDA; color: #633806; }
+.badge-advanced   { background: #FAECE7; color: #712B13; }
+
+/* TAGS */
+.tl-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.tag {
+  font-size: 11px;
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.tag-plc  { color: #185FA5; background: #E6F1FB; border-color: #B5D4F4; }
+.tag-lang { color: #0F6E56; background: #E1F5EE; border-color: #9FE1CB; }
+
+/* IFRAME */
+.tl-card iframe {
+  border-radius: 8px;
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .tl-item {
+    flex-direction: column;
+  }
+  .tl-left {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+  }
+  .tl-line {
+    width: 100%;
+    height: 2px;
+    min-height: unset;
+    margin-top: 0;
+  }
+}
+/*--------------------------------------------------------------------- Project Timeline End ---------------------------------------------------------------------*/
+
 /*------------------------------ Code block----------------------------*/
 
 .code-block {
