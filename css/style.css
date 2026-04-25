@@ -1122,13 +1122,13 @@ button {
 }
 
 .date_text {
-    width: 160px;
+    width: 110px;
     margin: 0 auto;
-    font-size: 18px;
+    font-size: 15px;
     color: #fefefd;
     text-align: center;
     text-transform: uppercase;
-    padding: 14px 0px;
+    padding: 8px 0px;
     background-color: #f5c729;
 }
 
