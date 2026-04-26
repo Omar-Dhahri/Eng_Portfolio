@@ -44,7 +44,9 @@
                      <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                      </li>
-                     <a class="nav-link" href="https://omar-dhahri.github.io/Eng_Portfolio/Omar_resume.pdf" target="_blank">My CV</a>
+                     <li class="nav-item">
+                        <a class="nav-link" href="https://omar-dhahri.github.io/Eng_Portfolio/Omar_resume.pdf" target="_blank">My CV</a>
+                     </li>
                      <li class="nav-item">
                         <a class="nav-link" href="portfolio.html">Portfolio</a>
                      </li>
@@ -55,7 +57,7 @@
                         <a class="nav-link" href="Curriculum.html">My Journey</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contacts</a>
+                        <a class="nav-link" href="contact.html">Contact Us</a>
                      </li>
                   </ul>
                </div>
@@ -63,8 +65,9 @@
          </div>
       </div>
       <!-- header section end -->
+
       <!-- blog section start -->
-      <div class="blog_section layout_padding margin_top90">
+      <div class="blog_section layout_padding curriculum-blog">
          <div class="container">
             <div class="row">
                <div class="col-sm-12">
@@ -101,18 +104,365 @@
                               <h4 class="date_text">Jan 2024</h4>
                               <h4 class="prep_text">Promise National Hackathon</h4>
                            </div>
-                           <p class="lorem_text">I pitched in a national “Hackathon” competition with a group of engineers and won second place with a project idea for irrigation management using “IoT”.</p>
+                           <p class="lorem_text">I pitched in a national "Hackathon" competition with a group of engineers and won second place with a project idea for irrigation management using "IoT".</p>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="readmore_bt_1"><a href="index.html"><Hgroup>Home</Hgroup></a></div>
             </div>
          </div>
       </div>
       <!-- blog section end -->
+
+<!--
+=======================================================================
+  JOURNEY ENTRY — Festo MPS Lab (2018)
+  
+  HOW TO USE:
+  1. Paste the <style> block into your style.css (or inside <head>)
+  2. Paste the HTML block inside your .blog_section_2 > .container > .row
+     (replace or add after your existing col-md-4 cards)
+  3. Update the 3 image src="" paths to your actual photo filenames
+=======================================================================
+-->
+
+
+<!-- ===================== PASTE INTO style.css ===================== -->
+<style>
+/* ── Journey Timeline ── */
+.journey-timeline {
+    width: 100%;
+    float: left;
+    padding: 60px 0 40px 0;
+}
+
+.jt-entry {
+    display: flex;
+    gap: 0;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+/* left: date + line */
+.jt-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 110px;
+    flex-shrink: 0;
+    padding-top: 4px;
+}
+
+.jt-date-badge {
+    background-color: #f5c729;
+    color: #252f2d;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.jt-date-badge span {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.jt-vline {
+    width: 2px;
+    background: linear-gradient(to bottom, #f5c729 0%, rgba(245,199,41,0.1) 100%);
+    flex: 1;
+    margin-top: 10px;
+    min-height: 40px;
+}
+
+.jt-entry:last-child .jt-vline {
+    display: none;
+}
+
+/* dot */
+.jt-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #f5c729;
+    border: 3px solid #1a1a1a;
+    box-shadow: 0 0 0 2px #f5c729;
+    position: absolute;
+    left: 103px;
+    top: 8px;
+}
+
+/* right: card */
+.jt-card {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    overflow: hidden;
+    margin-left: 28px;
+}
+
+.jt-card-header {
+    background: #252f2d;
+    padding: 18px 24px 14px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.jt-card-header h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fefefd;
+    line-height: 1.35;
+}
+
+.jt-card-header p {
+    margin: 4px 0 0 0;
+    padding: 0;
+    font-size: 12px;
+    color: #aaa;
+    font-style: italic;
+}
+
+.jt-category-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    background: rgba(245,199,41,0.15);
+    color: #f5c729;
+    border: 1px solid rgba(245,199,41,0.35);
+    padding: 4px 12px;
+    border-radius: 30px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 2px;
+}
+
+.jt-card-body {
+    padding: 22px 24px 24px;
+}
+
+/* story text */
+.jt-story {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.85;
+    margin: 0 0 20px 0;
+    padding: 0 0 0 14px;
+    border-left: 3px solid #f5c729;
+}
+
+/* photo gallery */
+.jt-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.jt-gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease, filter 0.35s ease;
+    filter: brightness(0.9);
+}
+
+.jt-gallery img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+/* skills pills */
+.jt-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+.jt-skill {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+    background: #f4f4f4;
+    border: 1px solid #e0e0e0;
+    color: #555;
+}
+
+.jt-skill.primary {
+    background: rgba(245,199,41,0.12);
+    border-color: rgba(245,199,41,0.5);
+    color: #8a6d00;
+}
+
+/* bullet points */
+.jt-bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.jt-bullets li {
+    font-size: 13.5px;
+    color: #555;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.65;
+}
+
+.jt-bullets li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: #f5c729;
+    font-size: 13px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .jt-left { width: 70px; }
+    .jt-dot  { left: 63px; }
+    .jt-date-badge { font-size: 10px; padding: 5px 8px; }
+    .jt-gallery { grid-template-columns: 1fr 1fr; }
+    .jt-card-header { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+    .jt-gallery { grid-template-columns: 1fr; }
+    .jt-left { display: none; }
+    .jt-dot  { display: none; }
+    .jt-card { margin-left: 0; }
+}
+</style>
+<!-- ===================== END STYLE BLOCK ===================== -->
+
+
+
+
+<!-- ===================== PASTE INTO Curriculum.html ===================== -->
+<!-- Place this block INSIDE .blog_section_2 > .container, replacing or after the existing .row -->
+
+<div class="journey-timeline">
+  <div class="container">
+
+    <!-- ── ENTRY 1: Festo MPS Lab ── -->
+    <div class="jt-entry">
+
+      <div class="jt-left">
+        <div class="jt-date-badge">
+          2018
+          <span>Academic<br>Year</span>
+        </div>
+        <div class="jt-vline"></div>
+      </div>
+
+      <div class="jt-dot"></div>
+
+      <div class="jt-card">
+        <div class="jt-card-header">
+          <div>
+            <h3>First Contact with Industrial Automation</h3>
+            <p>ISET Sidi Bouzid — Festo MPS Pneumatic &amp; PLC Training Lab</p>
+          </div>
+          <span class="jt-category-tag">University Lab</span>
+        </div>
+
+        <div class="jt-card-body">
+
+          <p class="jt-story">
+            Before any simulation software, before TIA Portal on a laptop — there was this:
+            a real <strong>Festo Modular Production System</strong> bolted to a lab bench,
+            hissing with compressed air and alive with sensor signals. This is where my hands
+            first touched industrial automation.<br><br>
+            The task was to program and control a <strong>Pick &amp; Place station</strong> —
+            built from pneumatic cylinders, solenoid valves, pressure regulators, and proximity
+            sensors, all coordinated through a PLC running <strong>Siemens STEP 7</strong> and
+            programmed in <strong>Grafcet (SFC)</strong>. The station had to pick a workpiece,
+            transfer it via a gantry-style XY axis, and place it precisely at a target position —
+            entirely autonomously.<br><br>
+            It sounds straightforward — until you're staring at 40+ pneumatic fittings and a
+            control panel that demands you understand every I/O address before the first cylinder
+            extends. That pressure — the real kind — taught me what no simulation ever could:
+            how to <em>read</em> a system before you dare command it.
+          </p>
+
+          <!-- UPDATE these src paths to your actual image filenames -->
+          <div class="jt-gallery">
+            <img src="images/photo1.png" alt="Festo MPS full station overview — ISET Sidi Bouzid">
+            <img src="images/photo2.png" alt="Festo MPS XY gantry axis and pneumatic cylinders close-up">
+            <img src="images/photo3.png" alt="Festo MPS conveyor section and control panel units">
+          </div>
+
+          <div class="jt-skills">
+            <span class="jt-skill primary">Siemens STEP 7</span>
+            <span class="jt-skill primary">Grafcet / SFC</span>
+            <span class="jt-skill primary">Ladder Logic</span>
+            <span class="jt-skill">Pneumatic Actuators</span>
+            <span class="jt-skill">Solenoid Valves</span>
+            <span class="jt-skill">Proximity Sensors</span>
+            <span class="jt-skill">Festo MPS</span>
+            <span class="jt-skill">I/O Wiring</span>
+            <span class="jt-skill">Pressure Regulation</span>
+          </div>
+
+          <ul class="jt-bullets">
+            <li>Programmed a full Pick &amp; Place sequence using Grafcet (SFC) — coordinating pneumatic cylinder extensions, gripper actuation, and sensor feedback in a safe sequential flow.</li>
+            <li>Wired and validated all digital I/O connections between the PLC and Festo MPS station, mapping physical sensor/actuator addresses to STEP 7 symbol table entries.</li>
+            <li>Understood pneumatic circuit logic: air supply management, pressure regulation, directional control valves, and double-acting cylinder behavior under load.</li>
+            <li>Debugged real timing conflicts between actuator strokes and sensor feedback — a critical skill that simulation software never exposes.</li>
+            <li>First hands-on exposure to industrial control philosophy: fail-safe design, emergency stop logic, and controlled state transitions.</li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <!-- ── END ENTRY 1 ── -->
+
+
+    <!-- ══════════════════════════════════════════════════════
+         ADD MORE ENTRIES BELOW — just copy the jt-entry block
+         and update the content. The .jt-vline connects them.
+    ══════════════════════════════════════════════════════ -->
+
+
+  </div>
+
+<!-- ===================== END HTML BLOCK ===================== -->
+
+
+<div class="readmore_bt_1"><a href="index.html">Home</a>
+</div>
+</div>
+
+
+
       <!-- footer section start -->
-      <div class="footer_section margin_top90">
+      <div class="footer_section">
          <div class="container">
             <div class="location_text">
                <ul>
@@ -130,6 +480,7 @@
          </div>
       </div>
       <!-- footer section end -->
+
       <!-- copyright section start -->
       <div class="copyright_section">
          <div class="container">
@@ -137,6 +488,7 @@
          </div>
       </div>
       <!-- copyright section end -->
+
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
@@ -150,14 +502,10 @@
          $('#myCarousel').carousel({
             interval: false
          });
-         
-         //scroll slides on swipe for touch enabled devices
-         
+
          $("#myCarousel").on("touchstart", function(event){
-         
             var yClick = event.originalEvent.touches[0].pageY;
             $(this).one("touchmove", function(event){
-         
                 var yMove = event.originalEvent.touches[0].pageY;
                 if( Math.floor(yClick - yMove) > 1 ){
                     $(".carousel").carousel('next');
