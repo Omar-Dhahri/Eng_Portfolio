@@ -284,7 +284,250 @@ body {
   }
 }
 /*--------------------------------------------------------------------- Project Timeline End ---------------------------------------------------------------------*/
+/*
+=======================================================================
+  JOURNEY TIMELINE — UNIFIED STYLE FIX
+  Replace the entire previous journey CSS block in your style.css
+  with this one. All entries will now look identical.
+=======================================================================
+*/
 
+/* ── Journey Timeline wrapper ── */
+.journey-timeline {
+    width: 100%;
+    float: left;
+    padding: 60px 0 40px 0;
+}
+
+.jt-entry {
+    display: flex;
+    gap: 0;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+/* ── Left column: date badge + vertical line ── */
+.jt-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 110px;
+    flex-shrink: 0;
+    padding-top: 4px;
+}
+
+/* DATE BADGE — rounded corners, yellow fill, dark text */
+.jt-date-badge {
+    background-color: #f5c729;
+    color: #252f2d;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 1.4;
+    width: 100%;               /* always fill the column */
+    box-sizing: border-box;
+}
+
+.jt-date-badge span {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+/* Vertical connecting line */
+.jt-vline {
+    width: 2px;
+    background: linear-gradient(to bottom, #f5c729 0%, rgba(245,199,41,0.15) 100%);
+    flex: 1;
+    margin-top: 10px;
+    min-height: 40px;
+}
+
+.jt-entry:last-child .jt-vline {
+    display: none;
+}
+
+/* DOT — hollow/outlined style */
+.jt-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ffffff;         /* hollow center */
+    border: 3px solid #f5c729;  /* yellow ring */
+    position: absolute;
+    left: 102px;
+    top: 10px;
+}
+
+/* ── Right column: card ── */
+.jt-card {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    overflow: hidden;
+    margin-left: 28px;
+}
+
+/* Card dark header */
+.jt-card-header {
+    background: #252f2d;
+    padding: 18px 24px 14px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.jt-card-header h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fefefd;
+    line-height: 1.35;
+}
+
+.jt-card-header p {
+    margin: 4px 0 0 0;
+    padding: 0;
+    font-size: 12px;
+    color: #aaaaaa;
+    font-style: italic;
+}
+
+/* Category tag top-right */
+.jt-category-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    background: rgba(245,199,41,0.15);
+    color: #f5c729;
+    border: 1px solid rgba(245,199,41,0.35);
+    padding: 4px 12px;
+    border-radius: 30px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 2px;
+}
+
+/* Card body */
+.jt-card-body {
+    padding: 22px 24px 24px;
+}
+
+/* Story paragraph with yellow left border */
+.jt-story {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.85;
+    margin: 0 0 20px 0;
+    padding: 0 0 0 14px;
+    border-left: 3px solid #f5c729;
+}
+
+/* Photo gallery grid */
+.jt-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.jt-gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease, filter 0.35s ease;
+    filter: brightness(0.9);
+}
+
+.jt-gallery img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+/* Skill pills */
+.jt-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+.jt-skill {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+    background: #f4f4f4;
+    border: 1px solid #e0e0e0;
+    color: #555555;
+}
+
+.jt-skill.primary {
+    background: rgba(245,199,41,0.12);
+    border-color: rgba(245,199,41,0.5);
+    color: #7a5f00;
+}
+
+/* Bullet points */
+.jt-bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.jt-bullets li {
+    font-size: 13.5px;
+    color: #555555;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.65;
+}
+
+.jt-bullets li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: #f5c729;
+    font-size: 13px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .jt-left { width: 80px; }
+    .jt-dot  { left: 72px; }
+    .jt-date-badge { font-size: 11px; padding: 6px 10px; }
+    .jt-gallery { grid-template-columns: 1fr 1fr; }
+    .jt-card-header { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+    .jt-gallery { grid-template-columns: 1fr; }
+    .jt-left { display: none; }
+    .jt-dot  { display: none; }
+    .jt-card { margin-left: 0; }
+}
 /*--------------------------------------------------------------------- Contact Section begin ---------------------------------------------------------------------*/
 
 /* ── Google Font ── */
