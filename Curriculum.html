@@ -112,254 +112,14 @@
             </div>
          </div>
       </div>
+
+      
+
       <!-- blog section end -->
 
-<!--
-=======================================================================
-  JOURNEY ENTRY — Festo MPS Lab (2018)
-  
-  HOW TO USE:
-  1. Paste the <style> block into your style.css (or inside <head>)
-  2. Paste the HTML block inside your .blog_section_2 > .container > .row
-     (replace or add after your existing col-md-4 cards)
-  3. Update the 3 image src="" paths to your actual photo filenames
-=======================================================================
--->
 
 
-<!-- ===================== PASTE INTO style.css ===================== -->
-<style>
-/* ── Journey Timeline ── */
-.journey-timeline {
-    width: 100%;
-    float: left;
-    padding: 60px 0 40px 0;
-}
 
-.jt-entry {
-    display: flex;
-    gap: 0;
-    margin-bottom: 60px;
-    position: relative;
-}
-
-/* left: date + line */
-.jt-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 110px;
-    flex-shrink: 0;
-    padding-top: 4px;
-}
-
-.jt-date-badge {
-    background-color: #f5c729;
-    color: #252f2d;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 6px 12px;
-    border-radius: 4px;
-    white-space: nowrap;
-    text-align: center;
-    line-height: 1.3;
-}
-
-.jt-date-badge span {
-    display: block;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
-
-.jt-vline {
-    width: 2px;
-    background: linear-gradient(to bottom, #f5c729 0%, rgba(245,199,41,0.1) 100%);
-    flex: 1;
-    margin-top: 10px;
-    min-height: 40px;
-}
-
-.jt-entry:last-child .jt-vline {
-    display: none;
-}
-
-/* dot */
-.jt-dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #f5c729;
-    border: 3px solid #1a1a1a;
-    box-shadow: 0 0 0 2px #f5c729;
-    position: absolute;
-    left: 103px;
-    top: 8px;
-}
-
-/* right: card */
-.jt-card {
-    flex: 1;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-    overflow: hidden;
-    margin-left: 28px;
-}
-
-.jt-card-header {
-    background: #252f2d;
-    padding: 18px 24px 14px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.jt-card-header h3 {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    font-weight: 700;
-    color: #fefefd;
-    line-height: 1.35;
-}
-
-.jt-card-header p {
-    margin: 4px 0 0 0;
-    padding: 0;
-    font-size: 12px;
-    color: #aaa;
-    font-style: italic;
-}
-
-.jt-category-tag {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    background: rgba(245,199,41,0.15);
-    color: #f5c729;
-    border: 1px solid rgba(245,199,41,0.35);
-    padding: 4px 12px;
-    border-radius: 30px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    align-self: flex-start;
-    margin-top: 2px;
-}
-
-.jt-card-body {
-    padding: 22px 24px 24px;
-}
-
-/* story text */
-.jt-story {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.85;
-    margin: 0 0 20px 0;
-    padding: 0 0 0 14px;
-    border-left: 3px solid #f5c729;
-}
-
-/* photo gallery */
-.jt-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.jt-gallery img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.35s ease, filter 0.35s ease;
-    filter: brightness(0.9);
-}
-
-.jt-gallery img:hover {
-    transform: scale(1.05);
-    filter: brightness(1.05);
-}
-
-/* skills pills */
-.jt-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin-bottom: 18px;
-}
-
-.jt-skill {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 4px;
-    background: #f4f4f4;
-    border: 1px solid #e0e0e0;
-    color: #555;
-}
-
-.jt-skill.primary {
-    background: rgba(245,199,41,0.12);
-    border-color: rgba(245,199,41,0.5);
-    color: #8a6d00;
-}
-
-/* bullet points */
-.jt-bullets {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-}
-
-.jt-bullets li {
-    font-size: 13.5px;
-    color: #555;
-    padding-left: 20px;
-    position: relative;
-    line-height: 1.65;
-}
-
-.jt-bullets li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    top: 1px;
-    color: #f5c729;
-    font-size: 13px;
-}
-
-/* responsive */
-@media (max-width: 768px) {
-    .jt-left { width: 70px; }
-    .jt-dot  { left: 63px; }
-    .jt-date-badge { font-size: 10px; padding: 5px 8px; }
-    .jt-gallery { grid-template-columns: 1fr 1fr; }
-    .jt-card-header { flex-direction: column; }
-}
-
-@media (max-width: 480px) {
-    .jt-gallery { grid-template-columns: 1fr; }
-    .jt-left { display: none; }
-    .jt-dot  { display: none; }
-    .jt-card { margin-left: 0; }
-}
-</style>
-<!-- ===================== END STYLE BLOCK ===================== -->
 
 
 
@@ -369,6 +129,165 @@
 
 <div class="journey-timeline">
   <div class="container">
+
+   <!--
+=======================================================================
+  JOURNEY ENTRY 2 — ENICarthage Robots 5.0 (Dec 2019)
+  
+  HOW TO USE:
+  1. Paste this jt-entry block inside your .journey-timeline > .container
+     right AFTER the closing  comment
+  2. Update the 3 image src="" paths to your actual photo filenames
+  3. No new CSS needed — uses the same classes from Entry 1
+=======================================================================
+-->
+
+<!-- ── ENTRY 3: ENIS Robots 3.0 ── -->
+    <div class="jt-entry">
+
+      <div class="jt-left">
+        <div class="jt-date-badge">
+          Feb 2020
+          <span>ENIS<br>Sfax</span>
+        </div>
+        <div class="jt-vline"></div>
+      </div>
+
+      <div class="jt-dot"></div>
+
+      <div class="jt-card">
+        <div class="jt-card-header">
+          <div>
+            <h3>ENIS Robots 3.0 — Upgraded, Homologated &amp; Back in the Arena</h3>
+            <p>Engineering Geeks Club (EGC) — National Robotics Competition, Sfax</p>
+          </div>
+          <span class="jt-category-tag">Competition</span>
+        </div>
+
+        <div class="jt-card-body">
+
+          <p class="jt-story">
+            Two months after ENICarthage, we were back — but not with the same robot.
+            Every competition teaches you something, and what ENICarthage taught us was clear:
+            <strong>the robot needed to do more than move</strong>. ENIS Robots 3.0 had strict
+            homologation requirements, and to qualify, our robot had to be capable of
+            <strong>picking up an object from a 15 cm elevation</strong> and delivering it
+            precisely to unlock a gate — then continue navigating an obstacle course to the finish.<br><br>
+            So we engineered an upgrade: a <strong>servo-actuated elevator gripper arm</strong>
+            mounted on the front of the chassis — controllable in real time, precise enough to
+            grab a target object and release it on command. The robot also got a structural
+            rebuild: reinforced aluminum chassis panels, blue LED headlights for visibility,
+            and cleaner internal wiring to survive the abuse of competition terrain.<br><br>
+            The challenge itself was a <strong>timed run</strong> — not just obstacle avoidance,
+            but a full sequence: approach the elevated object, grip it, lower it, deliver it to
+            the gate trigger, watch the gate open, then race through the remaining course before
+            time runs out. Every second counted. Every mechanism had to work on the first try.
+            That's the kind of pressure that turns builders into engineers.
+          </p>
+
+          <!-- UPDATE these src paths to your actual image filenames -->
+          <div class="jt-gallery">
+            <img src="images/enis-2.jpg" alt="Close-up of the servo gripper arm and blue LED headlights">
+            <img src="images/enis-3.jpg" alt="Exposed chassis showing motor layout and structural rebuild">
+            <img src="images/enis-4.jpg" alt="Team doing last-minute electronics fixes before the timed run">
+          </div>
+
+          <div class="jt-skills">
+            <span class="jt-skill primary">Arduino</span>
+            <span class="jt-skill primary">Servo Control</span>
+            <span class="jt-skill primary">Mechanical Design</span>
+            <span class="jt-skill">Gripper / Elevator Mechanism</span>
+            <span class="jt-skill">DC Motor Control</span>
+            <span class="jt-skill">Bluetooth Control</span>
+            <span class="jt-skill">Chassis Fabrication</span>
+            <span class="jt-skill">Electronics Wiring</span>
+            <span class="jt-skill">Timed Challenge Strategy</span>
+          </div>
+
+          <ul class="jt-bullets">
+            <li>Engineered a servo-actuated elevator gripper arm that could pick up an object from a 15 cm elevated platform and deliver it to a target zone — a required homologation feature for competition entry.</li>
+            <li>Rebuilt the robot chassis with reinforced aluminum panels and improved internal layout, addressing structural failures observed during the previous competition.</li>
+            <li>Integrated blue LED headlights and cleaner cable routing — improving both aesthetics and reliability under competition stress.</li>
+            <li>Executed a full timed sequence under competition pressure: object pickup → delivery → gate trigger → obstacle navigation → finish line, with all mechanisms required to function on the first attempt.</li>
+            <li>Learned the critical difference between a robot that works on a bench and one that performs reliably in a live, timed, high-stakes environment.</li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <!-- ── END ENTRY 3 ── -->
+
+<!-- ── ENTRY 2: ENICarthage Robots 5.0 ── -->
+    <div class="jt-entry">
+
+      <div class="jt-left">
+        <div class="jt-date-badge">
+          Dec 2019
+          <span>ENIC<br>Carthage</span>
+        </div>
+        <div class="jt-vline"></div>
+      </div>
+
+      <div class="jt-dot"></div>
+
+      <div class="jt-card">
+        <div class="jt-card-header">
+          <div>
+            <h3>ENICarthage Robots 5.0 — First Steps in Competitive Robotics</h3>
+            <p>Engineering Geeks Club (EGC) — National Robotics Competition, Tunis</p>
+          </div>
+          <span class="jt-category-tag">Competition</span>
+        </div>
+
+        <div class="jt-card-body">
+
+          <p class="jt-story">
+            Every engineer remembers their first competition. Mine was <strong>ENICarthage Robots 5.0</strong>,
+            organized by the Engineering Geeks Club at ENIC Carthage — one of Tunisia's most
+            anticipated student robotics events. Dozens of teams, a packed outdoor arena, and
+            hundreds of eyes watching every move your robot makes.<br><br>
+            Our entry was a <strong>Bluetooth-controlled ground robot</strong>, built from scratch:
+            a custom chassis, DC motors with rubber-grip wheels, a motor driver, and an Arduino
+            brain — all commanded in real time from a smartphone app. The arena itself was a
+            challenge course designed to test navigation, precision, and control under pressure —
+            ramps, gravel zones, obstacles, and tight corridors that punished any sloppy driving.<br><br>
+            The robot took hits. The chassis cracked. The wiring held. And standing there in front
+            of that crowd, phone in hand, watching something I built with my own hands move through
+            that course — that was the moment I understood why engineers build things.
+            Not just to make them work, but to make them <em>perform</em>.
+          </p>
+
+          <!-- UPDATE these src paths to your actual image filenames -->
+          <div class="jt-gallery">
+            <img src="images/enicarthage-1.jpg" alt="Battle-tested robot chassis after the competition course">
+            <img src="images/enicarthage-2.jpg" alt="Omar controlling the robot via Bluetooth smartphone app">
+            <img src="images/enicarthage-3.jpg" alt="Full competition arena with robot navigating the course and crowd watching">
+          </div>
+
+          <div class="jt-skills">
+            <span class="jt-skill primary">Arduino</span>
+            <span class="jt-skill primary">Bluetooth Control</span>
+            <span class="jt-skill primary">Embedded Systems</span>
+            <span class="jt-skill">DC Motor Control</span>
+            <span class="jt-skill">Motor Driver (L298N)</span>
+            <span class="jt-skill">Chassis Design</span>
+            <span class="jt-skill">Android App Control</span>
+            <span class="jt-skill">Real-time Control</span>
+            <span class="jt-skill">Prototyping</span>
+          </div>
+
+          <ul class="jt-bullets">
+            <li>Designed and assembled a ground robot from scratch — chassis fabrication, motor mounting, electronics integration, and wiring — with zero budget for mistakes on competition day.</li>
+            <li>Implemented Bluetooth serial communication between an Arduino microcontroller and an Android smartphone, enabling real-time directional control of the robot.</li>
+            <li>Configured a DC motor driver (L298N) for bidirectional wheel control — forward, reverse, left and right turns — with responsive speed handling.</li>
+            <li>Navigated a multi-terrain competition course including ramps, gravel, and obstacle zones under time pressure and in front of a live audience.</li>
+            <li>First hands-on experience with competitive engineering: designing for robustness, debugging under pressure, and performing in front of a crowd — skills no classroom teaches.</li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <!-- ── END ENTRY 2 ── -->
 
     <!-- ── ENTRY 1: Festo MPS Lab ── -->
     <div class="jt-entry">
