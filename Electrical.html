@@ -153,13 +153,13 @@
   </div>
   <pre><code>
 
-#include <SoftwareSerial.h>       
+#include "SoftwareSerial.h" //replace "" by <>      
                     
         SoftwareSerial PZEMSerial(10,11);                         
 
         /* 1- PZEM-014/016 AC Energy Meter */
         
-        #include <ModbusMaster.h>                      
+        #include "ModbusMaster.h"             //replace "" by <>         
         
         static uint8_t pzemSlaveAddr = 0x01;                  // Declare the address of device (meter) in term of 8 bits. You can change to 0x02 etc if you have more than 1 energy meter.
         ModbusMaster node;                                    /* activate modbus master codes*/  
