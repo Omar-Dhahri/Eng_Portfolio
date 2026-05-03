@@ -79,6 +79,99 @@
    <!-- ===================== PASTE INTO Electrical Design service page ===================== -->
 <!-- Use the same jt-entry structure as the Journey entries — same classes, same format -->
 
+
+<!-- ── PROJECT ENTRY: Real-Time Power Monitoring — PZEM-016 + RS485 + Arduino ── -->
+<div class="jt-entry">
+
+  <div class="jt-left">
+    <div class="jt-date-badge">
+      Mar 2024
+      <span>IoT<br>Energy</span>
+    </div>
+    <div class="jt-vline"></div>
+  </div>
+
+  <div class="jt-dot"></div>
+
+  <div class="jt-card">
+    <div class="jt-card-header">
+      <div>
+        <h3>Real-Time Power Monitoring System — PZEM-016 · RS485 · Arduino</h3>
+        <p>Personal Project — Electrical Energy Measurement &amp; Risk Management, March 2024</p>
+      </div>
+      <span class="jt-category-tag">Electrical · IoT · Measurement</span>
+    </div>
+
+    <div class="jt-card-body">
+
+      <p class="jt-story">
+        An electrical cabinet that delivers power is half the job. Knowing exactly
+        how much power it is delivering — in real time, per machine, per circuit —
+        is the other half. This personal project was built around that idea: using
+        a <strong>Peacefair PZEM-016</strong> power meter and a
+        <strong>TTL-to-RS485 converter</strong> interfaced with an
+        <strong>Arduino UNO</strong> to build a complete real-time electrical
+        monitoring system.<br><br>
+        The PZEM-016 measures all the critical parameters simultaneously —
+        <strong>voltage (V), current (A), active power (W), power factor (pf),
+        and cumulative energy (Wh)</strong> — and communicates over the
+        <strong>Modbus RTU protocol via RS485</strong>. The TTL-to-RS485 module
+        bridges the industrial RS485 signal to the Arduino's UART, where a
+        dedicated C++ program polls the sensor every 2 seconds, parses the
+        Modbus response frame, and streams all five parameters to the Serial
+        Monitor with a precise timestamp. The result is a continuous, timestamped
+        log of the electrical state of any connected load — visible live on screen
+        and exportable for analysis.<br><br>
+        The applications are direct and industrial: <strong>consumption monitoring</strong>
+        to detect abnormal draws before they become failures, <strong>machine
+        protection</strong> by triggering alerts when current exceeds safe thresholds,
+        and <strong>risk management</strong> by logging energy data that reveals
+        degradation patterns over time — the same philosophy as predictive
+        maintenance, applied at the electrical measurement layer.
+      </p>
+
+      <!-- Photos (4):
+           1 = IMG20240321174556.jpg   — RS485 TTL-to-UART converter module connected to Arduino UNO — the communication bridge layer
+           2 = IMG20240321174553.jpg   — Peacefair PZEM-016 power meter module close-up — the AC measurement sensor
+           3 = IMG20240321174541.jpg   — Full test bench: laptop + Arduino UNO + PZEM-016 + RS485 module + all wiring active
+           4 = IMG-20240323-WA0000.jpg — Arduino IDE Serial Monitor showing live timestamped V / A / W / pf / Wh readings from the PZEM-016
+      -->
+      <div class="jt-gallery">
+        <img src="images/pzem-1.jpg"     alt="TTL-to-RS485 converter module connected to Arduino UNO with red, white, and jumper wires — the Modbus RTU communication bridge between the PZEM-016 power meter and the microcontroller">
+        <img src="images/pzem-2.jpg"       alt="Peacefair PZEM-016 AC power meter module close-up — black enclosure with green screw terminal blocks on both sides for voltage and current measurement connections">
+        <img src="images/pzem-3.jpeg"   alt="Complete power monitoring test bench: laptop with Arduino IDE open, Arduino UNO connected via USB, PZEM-016 power meter and RS485 TTL module wired together on the table, all components live and running">
+      </div>
+
+      <div class="jt-skills">
+        <span class="jt-skill primary">Power Measurement (PZEM-016)</span>
+        <span class="jt-skill primary">Modbus RTU Protocol</span>
+        <span class="jt-skill primary">RS485 Communication</span>
+        <span class="jt-skill primary">Arduino C++ Programming</span>
+        <span class="jt-skill">Real-Time Data Acquisition</span>
+        <span class="jt-skill">Voltage &amp; Current Monitoring</span>
+        <span class="jt-skill">Power Factor Measurement</span>
+        <span class="jt-skill">Energy Consumption Logging</span>
+        <span class="jt-skill">TTL-to-RS485 Interface</span>
+        <span class="jt-skill">Serial Communication (UART)</span>
+        <span class="jt-skill">Machine Protection Logic</span>
+        <span class="jt-skill">Predictive Maintenance Approach</span>
+        <span class="jt-skill">Risk Management (Electrical)</span>
+        <span class="jt-skill">Embedded Systems</span>
+      </div>
+
+      <ul class="jt-bullets">
+        <li>Designed and built a <strong>real-time electrical power monitoring system</strong> using a Peacefair PZEM-016 AC power meter, a TTL-to-RS485 converter, and an Arduino UNO — communicating over the <strong>Modbus RTU industrial protocol</strong>.</li>
+        <li>Programmed the full <strong>Modbus RTU polling logic in C++</strong> on Arduino — sending query frames to the PZEM-016 every 2 seconds, parsing the response, and extracting 5 simultaneous measurements: voltage, current, active power, power factor, and cumulative energy (Wh).</li>
+        <li>Achieved <strong>timestamped real-time logging</strong> of all electrical parameters to the Arduino Serial Monitor — providing a continuous, readable data stream suitable for consumption analysis and anomaly detection.</li>
+        <li>Demonstrated practical applications in <strong>consumption control</strong> (detecting overconsumption circuits), <strong>machine protection</strong> (current threshold monitoring), and <strong>predictive maintenance</strong> (energy degradation pattern tracking over time).</li>
+        <li>Validated the <strong>RS485 industrial communication standard</strong> in an embedded context — directly applicable to energy monitoring modules inside electrical cabinets, smart meters, and industrial IoT gateways.</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+<!-- ── END ENTRY: PZEM-016 Power Monitoring ── -->
+     
 <!-- ── PROJECT ENTRY: Electrical Cabinet Assembly — Chiheb Electrique ── -->
 <div class="jt-entry">
 
