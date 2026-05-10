@@ -81,14 +81,13 @@
    <!-- ===================== PASTE INTO Electrical Design service page ===================== -->
 <!-- Use the same jt-entry structure as the Journey entries — same classes, same format -->
 
-
-<!-- ── PROJECT ENTRY: Real-Time Power Monitoring — PZEM-016 + RS485 + Arduino ── -->
+<!-- ── PROJECT ENTRY: AC Motor Drive Characterisation — Frequency Converter Lab ── -->
 <div class="jt-entry">
 
   <div class="jt-left">
     <div class="jt-date-badge">
-      Mar 2024
-      <span>IoT<br>Energy</span>
+      2021
+      <span>University<br>Lab</span>
     </div>
     <div class="jt-vline"></div>
   </div>
@@ -98,313 +97,118 @@
   <div class="jt-card">
     <div class="jt-card-header">
       <div>
-        <h3>Real-Time Power Monitoring System — PZEM-016 · RS485 · Arduino</h3>
-        <p>Personal Project — Electrical Energy Measurement &amp; Risk Management, March 2024</p>
+        <h3>AC Motor Drive Characterisation — Inverter Current Waveform Analysis at Variable Clock Frequencies</h3>
+        <p>University Electrical Machines Lab — Power Electronics & Motor Control, 2021</p>
       </div>
-      <span class="jt-category-tag">Electrical · IoT · Measurement</span>
+      <span class="jt-category-tag">Power Electronics · Motor Control · Measurement</span>
     </div>
 
     <div class="jt-card-body">
 
       <p class="jt-story">
-        An electrical cabinet that delivers power is half the job. Knowing exactly
-        how much power it is delivering — in real time, per machine, per circuit —
-        is the other half. This personal project was built around that idea: using
-        a <strong>Peacefair PZEM-016</strong> power meter and a
-        <strong>TTL-to-RS485 converter</strong> interfaced with an
-        <strong>Arduino UNO</strong> to build a complete real-time electrical
-        monitoring system.<br><br>
-        The PZEM-016 measures all the critical parameters simultaneously —
-        <strong>voltage (V), current (A), active power (W), power factor (pf),
-        and cumulative energy (Wh)</strong> — and communicates over the
-        <strong>Modbus RTU protocol via RS485</strong>. The TTL-to-RS485 module
-        bridges the industrial RS485 signal to the Arduino's UART, where a
-        dedicated C++ program polls the sensor every 2 seconds, parses the
-        Modbus response frame, and streams all five parameters to the Serial
-        Monitor with a precise timestamp. The result is a continuous, timestamped
-        log of the electrical state of any connected load — visible live on screen
-        and exportable for analysis.<br><br>
-        The applications are direct and industrial: <strong>consumption monitoring</strong>
-        to detect abnormal draws before they become failures, <strong>machine
-        protection</strong> by triggering alerts when current exceeds safe thresholds,
-        and <strong>risk management</strong> by logging energy data that reveals
-        degradation patterns over time — the same philosophy as predictive
-        maintenance, applied at the electrical measurement layer.
+        Every motor connected to an inverter carries a hidden story inside its current
+        waveform — a story about switching quality, harmonic distortion, and thermal
+        behaviour. This laboratory session was an exercise in reading that story with
+        precision.<br><br>
+        The experiment was conducted on the <strong>Lucas-Nülle CO3636</strong> platform —
+        an industrial-grade servo drive test bench comprising the CO3636-3B static
+        converter unit, the CO3636-6W servo machine test bench, and the CO3636-3F
+        300W power electronic load. The bench was wired according to the three-phase
+        inverter schematic, with the three-phase induction motor mechanically coupled
+        to a programmable load, and measurement probes connected to capture voltage
+        and current simultaneously across operating conditions.<br><br>
+        The software instrument used was the <strong>Frequency Converter</strong>
+        application, configured with a 5-second acceleration ramp, SV-SINE space
+        vector modulation mode, and a linear U/f characteristic set at 50 Hz nominal
+        frequency. The first task was establishing the baseline: measuring the
+        line-to-line supply voltage, the DC intermediate bus voltage, and the inverter
+        output voltage using the bench multimeter — confirming the theoretical
+        relationship between rectified DC bus and AC output.<br><br>
+        The core of the session was the <strong>clock frequency comparison</strong>.
+        By sweeping the inverter's PWM switching frequency across 1 kHz, 4 kHz, and
+        8 kHz while holding all other parameters constant, the current waveform was
+        observed and photographed at each step. The results confirmed the fundamental
+        trade-off of inverter design: at <strong>low clock frequency (1 kHz)</strong>,
+        the motor current was heavily rippled — rich with switching harmonics and
+        audibly noisier — while the RMS value of the output current remained
+        essentially unchanged. As the clock frequency rose to <strong>8 kHz</strong>,
+        the current waveform smoothed progressively toward a clean sinusoid, the
+        acoustic noise of the motor dropped significantly, and the harmonic content
+        fell toward the fundamental — without any meaningful change in effective
+        current magnitude.<br><br>
+        The second phase examined the effect of <strong>PWM modulation mode</strong>:
+        switching from SV-SINE space vector modulation to BLOCK mode (fundamental
+        frequency square-wave drive) and comparing the resulting current shapes.
+        Under BLOCK mode, the current harmonic distortion increased sharply — the
+        waveform degraded visibly from a near-sinusoidal profile into a distorted
+        shape, confirming that the modulation strategy is as critical to current
+        quality as the switching frequency itself.<br><br>
+        A separate mechanical characterisation phase used the <strong>Lucas-Nülle
+        ActiveServo</strong> software to plot the full torque-speed and power-speed
+        curves of the induction motor under varying inverter output frequency —
+        recording synchronous speed transitions at 50 Hz, 45 Hz, 35 Hz, and 25 Hz,
+        and interpreting the proportional relationship between supply frequency and
+        rotor speed. The resulting characteristic curves, plotted live on the
+        measurement screen, gave a direct and measurable demonstration of variable
+        frequency drive operation.
       </p>
 
-      <!-- Photos (4):
-           1 = IMG20240321174556.jpg   — RS485 TTL-to-UART converter module connected to Arduino UNO — the communication bridge layer
-           2 = IMG20240321174553.jpg   — Peacefair PZEM-016 power meter module close-up — the AC measurement sensor
-           3 = IMG20240321174541.jpg   — Full test bench: laptop + Arduino UNO + PZEM-016 + RS485 module + all wiring active
-           4 = IMG-20240323-WA0000.jpg — Arduino IDE Serial Monitor showing live timestamped V / A / W / pf / Wh readings from the PZEM-016
+      <!-- Photos (20):
+           IMG-20211210-WA0000 — Frequency Converter software: simulation wiring diagram showing three-phase supply, rectifier, inverter bridge, DC bus, and coupled induction motor with power readout (394.8V, 0.52A, 153.81W)
+           IMG-20211210-WA0001 — Frequency Converter screen: 50Hz, SV-SINE mode, time-domain current waveform showing heavily rippled output (red) vs smoothed fundamental (grey), U/V=263, I=0.37A
+           IMG-20211210-WA0002 — Frequency Converter screen: 50Hz, SV-SINE, clean three-phase sinusoidal voltage (blue) and current (red) waveforms overlaid, U/V=256, U1/V=229, I=0.33A
+           IMG-20211210-WA0003 — Frequency Converter screen on classroom HP laptop: voltage range view showing clean three-phase sinusoidal waveforms at 50Hz, U/V=257, U1/V=230, I=0.33A
+           IMG-20211210-WA0005 — Frequency Converter screen: BLOCK mode selected — full square-wave voltage waveform (red) with sinusoidal envelope (blue) clearly visible, U/V=256, I=0.33A
+           IMG-20211210-WA0006 — Frequency Converter screen: rippled multi-harmonic current waveform in blue and red across all four periods at 50Hz, U/V=263, U1/V=251, I=0.37A
       -->
       <div class="jt-gallery">
-        <img src="images/pzem-1.jpg"     alt="TTL-to-RS485 converter module connected to Arduino UNO with red, white, and jumper wires — the Modbus RTU communication bridge between the PZEM-016 power meter and the microcontroller">
-        <img src="images/pzem-2.jpg"       alt="Peacefair PZEM-016 AC power meter module close-up — black enclosure with green screw terminal blocks on both sides for voltage and current measurement connections">
-        <img src="images/pzem-3.jpeg"   alt="Complete power monitoring test bench: laptop with Arduino IDE open, Arduino UNO connected via USB, PZEM-016 power meter and RS485 TTL module wired together on the table, all components live and running">
+        <img src="images/vfd-1.jpg"  alt="Frequency Converter software simulation diagram showing three-phase supply, rectifier, IGBT inverter bridge, DC intermediate bus, and coupled induction motor with live power readout: 394.8V, 0.52A, 153.81W">
+        <img src="images/vfd-2.jpg"  alt="Frequency Converter screen at 50Hz SV-SINE mode: heavily rippled output current waveform (red) overlaid against smoothed fundamental (grey), demonstrating harmonic content at 1kHz clock frequency — U=263V, I=0.37A">
+        <img src="images/vfd-3.jpg"  alt="Frequency Converter screen: clean three-phase sinusoidal voltage (blue) and current (red) waveforms at 8kHz clock frequency — smooth sinusoidal current profile, U=256V, U1=229V, I=0.33A">
+        <img src="images/vfd-4.jpg"  alt="Frequency Converter voltage range view on classroom HP laptop: three clean sinusoidal phase voltage waveforms at 50Hz confirming correct V/f ratio — U=257V, U1=230V, I=0.33A">
+        <img src="images/vfd-5.jpg"  alt="Frequency Converter in BLOCK mode: full-wave square voltage waveform (red) with sinusoidal envelope (blue) — demonstrating fundamental frequency switching and high harmonic distortion under block commutation">
+        <img src="images/vfd-6.jpg"  alt="Frequency Converter screen: multi-harmonic rippled current waveform plotted in blue and red across all four periods at 50Hz — characteristic signature of low clock frequency inverter output, I=0.37A">
       </div>
- <!-- Usage — paste wherever you need a code block -->
-<div class="code-block">
-  <div class="code-block-header">
-    <span>PZEM-016 · RS485 · Arduino.h — C++</span>
-    <button class="copy-btn" onclick="
-      navigator.clipboard.writeText(this.closest('.code-block').querySelector('code').innerText);
-      this.textContent='Copié !';
-      setTimeout(()=>this.textContent='Copier',1500);
-    ">Copier</button>
-  </div>
-  <pre><code>
+              <iframe width="100%" height="350"
+               src="https://www.youtube.com/embed/jxrM84eMzP4" controls alt="Live system demo showing Blynk mobile dashboard with real-time water level percentage and distance readings updating as the JSN-SR04T sensor detects changes in water level"
+              frameborder="0" allowfullscreen>
+             </iframe> 
 
-#include "SoftwareSerial.h" //replace "" by <>      
-                    
-        SoftwareSerial PZEMSerial(10,11);                         
-
-        /* 1- PZEM-014/016 AC Energy Meter */
-        
-        #include "ModbusMaster.h"             //replace "" by <>         
-        
-        static uint8_t pzemSlaveAddr = 0x01;                  // Declare the address of device (meter) in term of 8 bits. You can change to 0x02 etc if you have more than 1 energy meter.
-        ModbusMaster node;                                    /* activate modbus master codes*/  
-        float PZEMVoltage =0;                                 /* Declare value for AC voltage */
-        float PZEMCurrent =0;                                 /* Declare value for AC current*/
-        float PZEMPower =0;                                   /* Declare value for AC Power */
-        float PZEMEnergy=0;                                   /* Declare value for energy */
-        float PZEMHz =0;                                      /* Declare value for frequency */
-        float PZEMPf=0;                                       /* Declare value for power factor */
-        unsigned long startMillisPZEM;                        /* start counting time for data collection */
-        unsigned long currentMillisPZEM;                      /* current counting time for data collection */
-        const unsigned long periodPZEM = 1000;                // refresh data collection every X seconds (in seconds). Default 1000 = 1 second 
-       
-        /* 2 - Data submission to Blynk Server  */
-
-        unsigned long startMillisReadData;                    /* start counting time for data collection*/
-        unsigned long currentMillisReadData;                  /* current counting time for data collection*/
-        const unsigned long periodReadData = 1000;            /* refresh every X seconds (in seconds) in LED Display. Default 1000 = 1 second */
-        int ResetEnergy = 0;                                  /* reset energy function */
-        int a = 1;
-        unsigned long startMillis1;                           // to count time during initial start up (PZEM Software got some error so need to have initial pending time)
-      
- void setup() 
-{
-        /* General*/
-        
-        startMillis1 = millis();
-        
-        Serial.begin(9600);                                   /* to display readings in Serial Monitor at 9600 baud rates */
-        PZEMSerial.begin(9600);              // 4 = Rx/R0/ GPIO 4 (D2) & 0 = Tx/DI/ GPIO 0 (D3) on NodeMCU 
-/* 1- PZEM-014/016 AC Energy Meter */
-        
-        startMillisPZEM = millis();                           /* Start counting time for run code */            
-      //  pinMode(MAX485_RE, OUTPUT);                           /* Define RE Pin as Signal Output for RS485 converter. Output pin means Arduino command the pin signal to go high or low so that signal is received by the converter*/
-       // pinMode(MAX485_DE, OUTPUT);                           /* Define DE Pin as Signal Output for RS485 converter. Output pin means Arduino command the pin signal to go high or low so that signal is received by the converter*/
- //       digitalWrite(MAX485_RE, 0);                           /* Arduino create output signal for pin RE as LOW (no output)*/
-   //     digitalWrite(MAX485_DE, 0);                           /* Arduino create output signal for pin DE as LOW (no output)*/
-                                                              /* both pins no output means the converter is in communication signal receiving mode */
-//        node.preTransmission(preTransmission);                /* Callbacks allow us to configure the RS485 transceiver correctly*/
- //       node.postTransmission(postTransmission);
-        node.begin(pzemSlaveAddr,PZEMSerial);                 /* Define and start the Modbus RTU communication. Communication to specific slave address and which Serial port */
-        delay(1000);                                          /* after everything done, wait for 1 second */
-       
-       /* 2 - Data submission to Blynk Server */
-
-        startMillisReadData = millis();                       /* Start counting time for data submission to Blynk Server*/
-
-
-}
-
-
-
-     
-void loop() 
-{
-       
-        /* 0- General */
-        
-        //Blynk.run();
-        //PZEM_act(0x01);                                          /* allow the communication between Blynk server and Node MCU */
-        if ((millis()- startMillis1 >= 10000) && (a ==1))
-        {   
-//          changeAddress(0XF8, pzemSlaveAddr);                 // By delete the double slash symbol, the meter address will be set as 0x01. 
-                                                              // By default I allow this code to run every program startup. Will not have effect if you only have 1 meter
-          a = 0;
-        }
-        
-        /* 1- PZEM-014/016 AC Energy Meter */
-
-        currentMillisPZEM = millis();                                                                     /* count time for program run every second (by default)*/
-        if (currentMillisPZEM - startMillisPZEM >= periodPZEM)                                            /* for every x seconds, run the codes below*/
-        {    
-          uint8_t result;                                                                                 /* Declare variable "result" as 8 bits */   
-          result = node.readInputRegisters(0x0000, 9);                                                    /* read the 9 registers (information) of the PZEM-014 / 016 starting 0x0000 (voltage information) kindly refer to manual)*/
-          if (result == node.ku8MBSuccess)                                                                /* If there is a response */
-            {
-              uint32_t tempdouble = 0x00000000;                                                           /* Declare variable "tempdouble" as 32 bits with initial value is 0 */ 
-              PZEMVoltage = node.getResponseBuffer(0x0000) / 10.0;                                        /* get the 16bit value for the voltage value, divide it by 10 (as per manual) */
-                                                                                                          // 0x0000 to 0x0008 are the register address of the measurement value
-              tempdouble =  (node.getResponseBuffer(0x0002) << 16) + node.getResponseBuffer(0x0001);      /* get the currnet value. Current value is consists of 2 parts (2 digits of 16 bits in front and 2 digits of 16 bits at the back) and combine them to an unsigned 32bit */
-              PZEMCurrent = tempdouble / 1000.00;                                                         /* Divide the value by 1000 to get actual current value (as per manual) */
-              
-              tempdouble =  (node.getResponseBuffer(0x0004) << 16) + node.getResponseBuffer(0x0003);      /* get the power value. Power value is consists of 2 parts (2 digits of 16 bits in front and 2 digits of 16 bits at the back) and combine them to an unsigned 32bit */
-              PZEMPower = tempdouble / 10.0;                                                              /* Divide the value by 10 to get actual power value (as per manual) */
-              
-              tempdouble =  (node.getResponseBuffer(0x0006) << 16) + node.getResponseBuffer(0x0005);      /* get the energy value. Energy value is consists of 2 parts (2 digits of 16 bits in front and 2 digits of 16 bits at the back) and combine them to an unsigned 32bit */
-              PZEMEnergy = tempdouble;                                                                    
-  
-              PZEMHz = node.getResponseBuffer(0x0007) / 10.0;                                             /* get the 16bit value for the frequency value, divide it by 10 (as per manual) */
-              PZEMPf = node.getResponseBuffer(0x0008) / 100.00;                                           /* get the 16bit value for the power factor value, divide it by 100 (as per manual) */
-              
-        /* 2 - Data submission to Blynk Server  
-        currentMillisReadData = millis();                                                                 // Set counting time for data submission to server
-        if (currentMillisReadData - startMillisReadData >= periodReadData)                                // for every x seconds, run the codes below*/
-          //{
-            Serial.print("Vac : "); Serial.print(PZEMVoltage); Serial.println(" V ");
-            Serial.print("Iac : "); Serial.print(PZEMCurrent); Serial.println(" A ");
-            Serial.print("Power : "); Serial.print(PZEMPower); Serial.println(" W ");
-            Serial.print("Energy : "); Serial.print(PZEMEnergy); Serial.println(" Wh ");
-            Serial.print("Power Factor : "); Serial.print(PZEMPf); Serial.println(" pF ");
-            Serial.print("Frequency : "); Serial.print(PZEMHz); Serial.println(" Hz ");
-          
-          //  startMillisReadData = millis();                                                /* Set the starting point again for next counting time */
-         // }
-          
-
-              if (pzemSlaveAddr==2)                                                                       /* just for checking purpose to see whether can read modbus*/
-                {
-                  Serial.println();
-
-                }
-            } 
-              else
-                {
-                  Serial.println("Failed to read modbus");
-                }
-              startMillisPZEM = currentMillisPZEM ;                                                       /* Set the starting point again for next counting time */
-        }
-
-
-
-}   
-
-//void preTransmission()                                                                                     transmission program when triggered*/
-/*{
-  
-   1- PZEM-014/016 AC Energy Meter 
-        if(millis() - startMillis1 > 5000)                                                                // Wait for 5 seconds as ESP Serial cause start up code crash
-        {
-          digitalWrite(MAX485_RE, 1);                                                                      put RE Pin to high
-          digitalWrite(MAX485_DE, 1);                                                                      put DE Pin to high
-          delay(1);                                                                                       // When both RE and DE Pin are high, converter is allow to transmit communication
-        }
-}*/
-
-/*void postTransmission()                                                                                   /* Reception program when triggered
-{
-        
-        /* 1- PZEM-014/016 AC Energy Meter */
-       /* if(millis() - startMillis1 > 5000)                                                                // Wait for 5 seconds as ESP Serial cause start up code crash
-        {
-          delay(3);                                                                                       // When both RE and DE Pin are low, converter is allow to receive communication
-          digitalWrite(MAX485_RE, 0);                                                                     /* put RE Pin to low
-          digitalWrite(MAX485_DE, 0);                                                                     /* put DE Pin to low
-        //}
-}*/
-
-void PZEM_act(uint8_t slaveAddr)                                       // Virtual push button is defined as V7 of Blynk App. When the button is pushed, it will activate the codes  
-        {
-        
-            uint16_t u16CRC = 0xFFFF;                         /* declare CRC check 16 bits*/
-            static uint8_t resetCommand = 0x42;               /* reset command code*/
-           // uint8_t slaveAddr =pzemSlaveAddr;
-            u16CRC = crc16_update(u16CRC, slaveAddr);
-            u16CRC = crc16_update(u16CRC, resetCommand);
-  //          preTransmission();                                /* trigger transmission mode*/                
-            PZEMSerial.write(slaveAddr);                          /* send device address in 8 bit*/
-            PZEMSerial.write(resetCommand);                       /* send reset command */
-            PZEMSerial.write(lowByte(u16CRC));                    /* send CRC check code low byte  (1st part) */
-            PZEMSerial.write(highByte(u16CRC));                   /* send CRC check code high byte (2nd part) */ 
-            
-            delay(10);
- //           postTransmission();                               /* trigger reception mode*/
-            delay(100);
-          
-          while (PZEMSerial.available())
-{
-Serial.print(char(PZEMSerial.read()), HEX); 
-Serial.print(" ");
-}
-        }
-
-void changeAddress(uint8_t OldslaveAddr, uint8_t NewslaveAddr)                                            //Change the slave address of a node
-{
-
-        /* 1- PZEM-014/016 AC Energy Meter */
-        
-        static uint8_t SlaveParameter = 0x06;                                                             /* Write command code to PZEM */
-        static uint16_t registerAddress = 0x0002;                                                         /* Modbus RTU device address command code */
-        uint16_t u16CRC = 0xFFFF;                                                                         /* declare CRC check 16 bits*/
-        u16CRC = crc16_update(u16CRC, OldslaveAddr);                                                      // Calculate the crc16 over the 6bytes to be send
-        u16CRC = crc16_update(u16CRC, SlaveParameter);
-        u16CRC = crc16_update(u16CRC, highByte(registerAddress));
-        u16CRC = crc16_update(u16CRC, lowByte(registerAddress));
-        u16CRC = crc16_update(u16CRC, highByte(NewslaveAddr));
-        u16CRC = crc16_update(u16CRC, lowByte(NewslaveAddr));
-
-        //preTransmission();                                                                                /* trigger transmission mode*/
-      
-        PZEMSerial.write(OldslaveAddr);                                                                       /* these whole process code sequence refer to manual*/
-        PZEMSerial.write(SlaveParameter);
-        PZEMSerial.write(highByte(registerAddress));
-        PZEMSerial.write(lowByte(registerAddress));
-        PZEMSerial.write(highByte(NewslaveAddr));
-        PZEMSerial.write(lowByte(NewslaveAddr));
-        PZEMSerial.write(lowByte(u16CRC));
-        PZEMSerial.write(highByte(u16CRC));
-        delay(10);
-        //postTransmission();                                                                               /* trigger reception mode*/
-        delay(100);
-
-while (PZEMSerial.available())
-{
-Serial.print(char(PZEMSerial.read()), HEX); 
-Serial.print(" ");
-}
-
-}
-
-
-  </code></pre>
-</div>
-                 
       <div class="jt-skills">
-        <span class="jt-skill primary">Power Measurement (PZEM-016)</span>
-        <span class="jt-skill primary">Modbus RTU Protocol</span>
-        <span class="jt-skill primary">RS485 Communication</span>
-        <span class="jt-skill primary">Arduino C++ Programming</span>
-        <span class="jt-skill">Real-Time Data Acquisition</span>
-        <span class="jt-skill">Voltage &amp; Current Monitoring</span>
-        <span class="jt-skill">Power Factor Measurement</span>
-        <span class="jt-skill">Energy Consumption Logging</span>
-        <span class="jt-skill">TTL-to-RS485 Interface</span>
-        <span class="jt-skill">Serial Communication (UART)</span>
-        <span class="jt-skill">Machine Protection Logic</span>
-        <span class="jt-skill">Predictive Maintenance Approach</span>
-        <span class="jt-skill">Risk Management (Electrical)</span>
-        <span class="jt-skill">Embedded Systems</span>
+        <span class="jt-skill primary">Power Electronics — Inverter Analysis</span>
+        <span class="jt-skill primary">AC Motor Drive (VFD) Characterisation</span>
+        <span class="jt-skill primary">PWM Waveform Measurement &amp; Interpretation</span>
+        <span class="jt-skill">Lucas-Nülle CO3636 Test Bench</span>
+        <span class="jt-skill">Frequency Converter Software</span>
+        <span class="jt-skill">Lucas-Nülle ActiveServo Software</span>
+        <span class="jt-skill">SV-SINE Space Vector Modulation</span>
+        <span class="jt-skill">BLOCK Mode (Fundamental Frequency Drive)</span>
+        <span class="jt-skill">PWM Clock Frequency Sweep (1–8 kHz)</span>
+        <span class="jt-skill">Current Harmonic Analysis</span>
+        <span class="jt-skill">DC Intermediate Bus Voltage Measurement</span>
+        <span class="jt-skill">V/f Characteristic (U/f Curve)</span>
+        <span class="jt-skill">Torque-Speed Curve Plotting</span>
+        <span class="jt-skill">Variable Frequency Speed Control</span>
+        <span class="jt-skill">Three-Phase Induction Motor Testing</span>
+        <span class="jt-skill">Electrical Measurement &amp; Instrumentation</span>
+        <span class="jt-skill">Lab Report Writing &amp; Data Interpretation</span>
       </div>
 
       <ul class="jt-bullets">
-        <li>Designed and built a <strong>real-time electrical power monitoring system</strong> using a Peacefair PZEM-016 AC power meter, a TTL-to-RS485 converter, and an Arduino UNO — communicating over the <strong>Modbus RTU industrial protocol</strong>.</li>
-        <li>Programmed the full <strong>Modbus RTU polling logic in C++</strong> on Arduino — sending query frames to the PZEM-016 every 2 seconds, parsing the response, and extracting 5 simultaneous measurements: voltage, current, active power, power factor, and cumulative energy (Wh).</li>
-        <li>Achieved <strong>timestamped real-time logging</strong> of all electrical parameters to the Arduino Serial Monitor — providing a continuous, readable data stream suitable for consumption analysis and anomaly detection.</li>
-        <li>Demonstrated practical applications in <strong>consumption control</strong> (detecting overconsumption circuits), <strong>machine protection</strong> (current threshold monitoring), and <strong>predictive maintenance</strong> (energy degradation pattern tracking over time).</li>
-        <li>Validated the <strong>RS485 industrial communication standard</strong> in an embedded context — directly applicable to energy monitoring modules inside electrical cabinets, smart meters, and industrial IoT gateways.</li>
+        <li>Conducted a full inverter characterisation session on the <strong>Lucas-Nülle CO3636 industrial test bench</strong> — wiring the three-phase IGBT inverter circuit, power electronic load, and induction motor according to the lab schematic, from raw bench to live measurement.</li>
+        <li>Configured the <strong>Frequency Converter software</strong> with SV-SINE space vector modulation, linear U/f characteristic, 5-second ramp, and 50 Hz nominal frequency — and verified the DC intermediate bus voltage and inverter output voltage against theoretical predictions using the bench multimeter.</li>
+        <li>Performed a <strong>PWM clock frequency sweep from 1 kHz to 8 kHz</strong>, capturing and comparing current waveforms at each step — directly observing and documenting the progressive reduction in current ripple and motor acoustic noise as switching frequency increased.</li>
+        <li>Confirmed the key inverter trade-off: <strong>higher clock frequency produces a cleaner, more sinusoidal current waveform</strong> with significantly less harmonic distortion, while the RMS value of the output current remains essentially constant across the full frequency range.</li>
+        <li>Compared <strong>SV-SINE space vector modulation against BLOCK mode</strong> (fundamental frequency square-wave switching) — observing and recording the sharp increase in harmonic distortion and current waveform degradation under block commutation.</li>
+        <li>Used <strong>Lucas-Nülle ActiveServo software</strong> to plot the live torque-speed and power-speed characteristic curves of the induction motor, recording synchronous speed at 50 Hz, 45 Hz, 35 Hz, and 25 Hz — and interpreting the linear proportionality between inverter output frequency and rotor speed.</li>
+        <li>Completed a full written lab report documenting all measured values, waveform observations, multiple-choice analysis, and physical interpretations — published the current waveform comparison as a <strong>video demonstration</strong> on YouTube.</li>
       </ul>
 
     </div>
   </div>
 </div>
-<!-- ── END ENTRY: PZEM-016 Power Monitoring ── -->
-     
+<!-- ── END ENTRY: AC Motor Drive Characterisation — Frequency Converter Lab ── -->
+                 
 <!-- ── PROJECT ENTRY: Electrical Cabinet Assembly — Chiheb Electrique ── -->
 <div class="jt-entry">
 
