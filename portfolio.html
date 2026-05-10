@@ -74,76 +74,267 @@
             </div>
 		</div>
 	</div>
-		  
-<div class="portfolio_section">
-<section class="project">
 
-  <div class="project-header fade-in">
-    <h1>🤖 Robot Suiveur Autonome</h1>
-    <p class="subtitle">
-      Robot intelligent capable de suivre un utilisateur grâce au GPS, Bluetooth et capteurs embarqués.
-    </p>
+<!-- portfolio section start -->
+       
+<div class="journey-timeline">
+  <div class="container">
+	  
+<!-- ── PROJECT ENTRY: IoT Water Well Control Station ── -->
+<div class="jt-entry">
+
+  <div class="jt-left">
+    <div class="jt-date-badge">
+     Jan 2024
+      <span>Personal<br>Project</span>
+    </div>
+    <div class="jt-vline"></div>
   </div>
 
-  <div class="project-content">
+  <div class="jt-dot"></div>
 
-    <!-- LEFT -->
-    <div class="project-text slide-left">
-
-      <h2>👥 Équipe</h2>
-      <ul class="team">
-        <li>Paul PAQUIN</li>
-        <li>Grégoire PICHEREAU</li>
-        <li>Baptiste SCHMITT</li>
-        <li>Ruyi ZHENG</li>
-      </ul>
-
-      <h2>📌 Contexte</h2>
-      <p>
-        Projet réalisé à IMT Atlantique visant à développer un robot autonome capable de suivre un utilisateur et transporter une charge.
-      </p>
-
-            <h2>📌 Contexte</h2>
-      <p>
-        Projet réalisé à IMT Atlantique visant à développer un robot autonome capable de suivre un utilisateur et transporter une charge.
-      </p>
-
-      <h2>⚙️ Technologies</h2>
-      <div class="tech-stack">
-        <span>Arduino</span>
-        <span>C++</span>
-        <span>Android</span>
-        <span>Bluetooth</span>
-        <span>GPS</span>
+  <div class="jt-card">
+    <div class="jt-card-header">
+      <div>
+        <h3>IoT Water Well Control Station — Autonomous Pump Control & Real-Time Monitoring</h3>
+        <p>Personal Project — Embedded Systems & Industrial IoT, 2024</p>
       </div>
-
-      <h2>🧠 Fonctionnalités</h2>
-      <ul>
-        <li>Suivi automatique</li>
-        <li>Détection d’obstacles</li>
-        <li>Communication Bluetooth</li>
-        <li>Application Android</li>
-      </ul>
-
-      <a href="https://github.com/paulpaq98/RobotSuiveur" target="_blank" class="btn glow">
-        🔗 Voir le projet
-      </a>
-
+      <span class="jt-category-tag">IoT · Embedded · Electrical</span>
     </div>
 
-    <!-- RIGHT -->
-    <div class="project-media slide-right">
+    <div class="jt-card-body">
 
-      <div class="image-card">
-        <img src="https://telefab.fr/wp-content/uploads/2018/06/image13-1024x557.jpg" alt="Robot">
-      </div>
-      <div class="image-card">
-        <img src="https://telefab.fr/wp-content/uploads/2018/06/image13-1024x557.jpg" alt="Robot">
-      </div>
-      <!-- Usage — paste wherever you need a code block -->
+      <p class="jt-story">
+        It started with a single sensor. The <strong>JSN-SR04T</strong> — a waterproof
+        ultrasonic distance sensor — caught my attention because of one property that most
+        ultrasonic modules lack: it can be fully submerged in a hostile environment and
+        still return a reliable distance reading. The question that followed was natural —
+        if you can measure water level accurately in real time, why would anyone still be
+        manually switching a pump on and off?<br><br>
+        The first phase was validation. I wired the JSN-SR04T to a microcontroller, pushed
+        the readings over Wi-Fi to <strong>Blynk</strong>, and confirmed that the sensor
+        delivered stable, continuous level data directly to a mobile dashboard. That proof
+        of concept became the sensing backbone of something larger.<br><br>
+        The second phase was the control station. I designed and assembled a complete
+        <strong>Water Well Control Unit</strong> inside a sealed IP-rated enclosure —
+        housing a 5V regulated power supply, a microcontroller, a dual-relay module, an
+        RS485 communication module, and all necessary terminal blocks for field wiring.
+        The two relays were wired in parallel with the <strong>physical ON/OFF buttons
+        of the main electrical contactor</strong> — meaning the system could command
+        the pump to start or stop exactly as an operator would, without touching the
+        existing electrical installation.<br><br>
+        The logic was simple and reliable: when the water level drops below a defined
+        low threshold, the station starts the pump automatically; when the level reaches
+        the high threshold, it stops it — creating a fully autonomous fill-and-hold
+        control loop. But the station did not stop at control. Through electrical
+        monitoring, users received <strong>real-time consumption data</strong> and live
+        network status — detecting power outages, voltage fluctuations, and motor
+        anomalies the moment they occurred, all visible remotely on the Blynk application.
+        The result was a system that replaced a manual daily task with a reliable,
+        connected, self-managing process.
+      </p>
+
+      <!-- Photos:
+           1 = JSN-SR04T-V3_0-Waterproof-Ultrasonic-Range-Finder.jpg — JSN-SR04T waterproof ultrasonic sensor module with coaxial cable and black probe head laid on grey surface
+           2 = IMG-20240203-WA0000.jpeg — Hand holding JSN-SR04T probe in front of laptop showing YouTube research on IoT water level monitoring with ESP8266 and Blynk, ESP module visible on keyboard
+           3 = IMG202405061723171.jpg   — Open IP-rated white enclosure showing assembled control station: 5V PSU, dual relay module, microcontroller, RS485 module, terminal blocks, and JSN-SR04T probe cable exiting enclosure
+           4 = vid_1.mp4               — Live demo video of the system running: Blynk mobile dashboard showing real-time water level reading updating as sensor distance changes
+      -->
+      <div class="jt-gallery">
+        <img src="images/water-1.jpg" alt="JSN-SR04T V3 waterproof ultrasonic distance sensor — blue PCB module with coaxial cable and sealed black probe head, laid flat on grey surface">
+        <img src="images/water-2.jpeg" alt="Engineer holding JSN-SR04T probe next to a ThinkPad laptop displaying YouTube research on IoT water level monitoring with ESP8266 and Blynk — early research and prototyping phase">
+        <img src="images/water-3.jpg" alt="Open IP-rated white plastic enclosure showing the assembled Water Well Control Station interior: 5V switching PSU, dual relay module, microcontroller board, RS485 TTL converter, green screw terminal blocks, and sensor cable routed through enclosure wall">
+       </div>
+              <iframe width="100%" height="350"
+               src="images/water-vid1.mp4" controls alt="Live system demo showing Blynk mobile dashboard with real-time water level percentage and distance readings updating as the JSN-SR04T sensor detects changes in water level"
+              frameborder="0" allowfullscreen>
+             </iframe> 
+             <!-- Usage — paste wherever you need a code block -->
 <div class="code-block">
   <div class="code-block-header">
-    <span>Moteur.h — C++</span>
+    <span>waterproof jsn sr04t + Arduino mini.h — C++</span>
+    <button class="copy-btn" onclick="
+      navigator.clipboard.writeText(this.closest('.code-block').querySelector('code').innerText);
+      this.textContent='Copié !';
+      setTimeout(()=>this.textContent='Copier',1500);
+    ">Copier</button>
+  </div>
+  <pre><code>
+    #include "MedianFilter.h"    //replace "" with <> in Arduino IDE
+
+#define BLYNK_TEMPLATE_ID           ""
+#define BLYNK_TEMPLATE_NAME         ""
+#define BLYNK_AUTH_TOKEN            ""
+
+// Your WiFi credentials.
+// Set password to "" for open networks.
+char ssid[] = "DESKTOP-UA412LC 5324";
+char pass[] = "omar1234";
+
+/* Comment this out to disable prints and save space */
+#define BLYNK_PRINT Serial
+#include "SoftwareSerial.h"       //replace "" with <> in Arduino IDE
+
+SoftwareSerial mySerial(3, 1);
+
+#include "ESP8266WiFi.h"          //replace "" with <> in Arduino IDE
+#include "BlynkSimpleEsp8266.h"   //replace "" with <> in Arduino IDE
+
+const unsigned int TRIG_PIN = 13;  // RX
+const unsigned int ECHO_PIN = 12;  // TX
+//const unsigned int BAUD_RATE = 9600;
+
+
+void setup()
+{
+      pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+
+  // Debug console
+  Serial.begin(9600);
+      mySerial.begin(115200);
+
+
+  Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
+  // You can also specify server:
+  //Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass, "blynk.cloud", 80);
+  //Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass, IPAddress(192,168,1,100), 8080);
+}
+
+
+void loop()
+{
+  Blynk.run();
+  measureDistance() ;
+
+}
+
+
+void measureDistance() {
+
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+
+  const unsigned long duration = pulseIn(ECHO_PIN, HIGH);
+  int distance = duration / 29 / 2;
+
+  if (duration == 0) {
+    Serial.println("Warning: no pulse from sensor");
+  } else {
+    Serial.print("Distance to nearest object: ");
+    Serial.println(distance);
+    Serial.println(" cm");
+  }
+
+  delay(500);
+    Blynk.virtualWrite(V7, distance);  // Send distance value to Blynk Virtual Pin V7
+    
+}
+
+
+  </code></pre>
+</div>
+      <div class="jt-skills">
+        <span class="jt-skill primary">IoT System Design</span>
+        <span class="jt-skill primary">Embedded Systems Integration</span>
+        <span class="jt-skill primary">Autonomous Control Logic</span>
+        <span class="jt-skill">JSN-SR04T Ultrasonic Sensing</span>
+        <span class="jt-skill">ESP8266 / Wi-Fi Communication</span>
+        <span class="jt-skill">Blynk IoT Platform</span>
+        <span class="jt-skill">Relay Module Wiring</span>
+        <span class="jt-skill">Contactor Parallel Interfacing</span>
+        <span class="jt-skill">RS485 Communication</span>
+        <span class="jt-skill">5V PSU Integration</span>
+        <span class="jt-skill">Enclosure Assembly (IP-Rated)</span>
+        <span class="jt-skill">Terminal Block Wiring</span>
+        <span class="jt-skill">Real-Time Electrical Monitoring</span>
+        <span class="jt-skill">Threshold-Based Pump Control</span>
+        <span class="jt-skill">Remote Mobile Dashboard</span>
+        <span class="jt-skill">Fault Detection (Outage / Voltage / Motor)</span>
+      </div>
+
+      <ul class="jt-bullets">
+        <li>Identified and validated the <strong>JSN-SR04T waterproof ultrasonic sensor</strong> as a reliable solution for continuous water level measurement in harsh, submerged environments — replacing manual level checking entirely.</li>
+        <li>Built an initial proof-of-concept transmitting live sensor readings to a <strong>Blynk mobile dashboard</strong> over Wi-Fi, confirming stable real-time data delivery before scaling to a full control system.</li>
+        <li>Designed and assembled a complete <strong>Water Well Control Station</strong> inside a sealed IP-rated enclosure, integrating a switching PSU, microcontroller, dual-relay module, RS485 module, and field terminal blocks.</li>
+        <li>Wired dual relays in <strong>parallel with the existing contactor's manual ON/OFF buttons</strong> — enabling software-controlled pump switching without modifying the original electrical installation.</li>
+        <li>Implemented an <strong>autonomous hysteresis control loop</strong>: pump starts automatically at low-level threshold and stops at high-level threshold, eliminating daily manual intervention entirely.</li>
+        <li>Integrated <strong>real-time electrical monitoring</strong> to expose live consumption data and network health — detecting power outages, voltage anomalies, and motor dysfunctions remotely through the mobile application.</li>
+        <li>Delivered a self-managing, remotely monitored system that combines <strong>embedded sensing, relay actuation, and IoT connectivity</strong> into a single field-deployable control unit.</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+<!-- ── END ENTRY: IoT Water Well Control Station ── -->
+	   <!-- ── PROJECT ENTRY: Real-Time Power Monitoring — PZEM-016 + RS485 + Arduino ── -->
+<div class="jt-entry">
+
+  <div class="jt-left">
+    <div class="jt-date-badge">
+      Dec 2023
+      <span>IoT<br>Energy</span>
+    </div>
+    <div class="jt-vline"></div>
+  </div>
+
+  <div class="jt-dot"></div>
+
+  <div class="jt-card">
+    <div class="jt-card-header">
+      <div>
+        <h3>Real-Time Power Monitoring System — PZEM-016 · RS485 · Arduino</h3>
+        <p>Personal Project — Electrical Energy Measurement &amp; Risk Management, March 2024</p>
+      </div>
+      <span class="jt-category-tag">Electrical · IoT · Measurement</span>
+    </div>
+
+    <div class="jt-card-body">
+
+      <p class="jt-story">
+        An electrical cabinet that delivers power is half the job. Knowing exactly
+        how much power it is delivering — in real time, per machine, per circuit —
+        is the other half. This personal project was built around that idea: using
+        a <strong>Peacefair PZEM-016</strong> power meter and a
+        <strong>TTL-to-RS485 converter</strong> interfaced with an
+        <strong>Arduino UNO</strong> to build a complete real-time electrical
+        monitoring system.<br><br>
+        The PZEM-016 measures all the critical parameters simultaneously —
+        <strong>voltage (V), current (A), active power (W), power factor (pf),
+        and cumulative energy (Wh)</strong> — and communicates over the
+        <strong>Modbus RTU protocol via RS485</strong>. The TTL-to-RS485 module
+        bridges the industrial RS485 signal to the Arduino's UART, where a
+        dedicated C++ program polls the sensor every 2 seconds, parses the
+        Modbus response frame, and streams all five parameters to the Serial
+        Monitor with a precise timestamp. The result is a continuous, timestamped
+        log of the electrical state of any connected load — visible live on screen
+        and exportable for analysis.<br><br>
+        The applications are direct and industrial: <strong>consumption monitoring</strong>
+        to detect abnormal draws before they become failures, <strong>machine
+        protection</strong> by triggering alerts when current exceeds safe thresholds,
+        and <strong>risk management</strong> by logging energy data that reveals
+        degradation patterns over time — the same philosophy as predictive
+        maintenance, applied at the electrical measurement layer.
+      </p>
+
+      <!-- Photos (4):
+           1 = IMG20240321174556.jpg   — RS485 TTL-to-UART converter module connected to Arduino UNO — the communication bridge layer
+           2 = IMG20240321174553.jpg   — Peacefair PZEM-016 power meter module close-up — the AC measurement sensor
+           3 = IMG20240321174541.jpg   — Full test bench: laptop + Arduino UNO + PZEM-016 + RS485 module + all wiring active
+           4 = IMG-20240323-WA0000.jpg — Arduino IDE Serial Monitor showing live timestamped V / A / W / pf / Wh readings from the PZEM-016
+      -->
+      <div class="jt-gallery">
+        <img src="images/pzem-1.jpg"     alt="TTL-to-RS485 converter module connected to Arduino UNO with red, white, and jumper wires — the Modbus RTU communication bridge between the PZEM-016 power meter and the microcontroller">
+        <img src="images/pzem-2.jpg"       alt="Peacefair PZEM-016 AC power meter module close-up — black enclosure with green screw terminal blocks on both sides for voltage and current measurement connections">
+        <img src="images/pzem-3.jpeg"   alt="Complete power monitoring test bench: laptop with Arduino IDE open, Arduino UNO connected via USB, PZEM-016 power meter and RS485 TTL module wired together on the table, all components live and running">
+      </div>
+ <!-- Usage — paste wherever you need a code block -->
+<div class="code-block">
+  <div class="code-block-header">
+    <span>PZEM-016 · RS485 · Arduino.h — C++</span>
     <button class="copy-btn" onclick="
       navigator.clipboard.writeText(this.closest('.code-block').querySelector('code').innerText);
       this.textContent='Copié !';
@@ -152,172 +343,259 @@
   </div>
   <pre><code>
 
-// Classe Moteur — contrôle un moteur DC via L298N
-class Moteur {
-  private:
-    int pin_in1, pin_in2, pin_pwm;
+#include "SoftwareSerial.h" //replace "" by <>      
+                    
+        SoftwareSerial PZEMSerial(10,11);                         
 
-  public:
-    Moteur(int in1, int in2, int pwm) {
-      pin_in1 = in1;
-      pin_in2 = in2;
-      pin_pwm = pwm;
-      pinMode(in1, OUTPUT);
-      pinMode(in2, OUTPUT);
-      pinMode(pwm, OUTPUT);
-    }
+        /* 1- PZEM-014/016 AC Energy Meter */
+        
+        #include "ModbusMaster.h"             //replace "" by <>         
+        
+        static uint8_t pzemSlaveAddr = 0x01;                  // Declare the address of device (meter) in term of 8 bits. You can change to 0x02 etc if you have more than 1 energy meter.
+        ModbusMaster node;                                    /* activate modbus master codes*/  
+        float PZEMVoltage =0;                                 /* Declare value for AC voltage */
+        float PZEMCurrent =0;                                 /* Declare value for AC current*/
+        float PZEMPower =0;                                   /* Declare value for AC Power */
+        float PZEMEnergy=0;                                   /* Declare value for energy */
+        float PZEMHz =0;                                      /* Declare value for frequency */
+        float PZEMPf=0;                                       /* Declare value for power factor */
+        unsigned long startMillisPZEM;                        /* start counting time for data collection */
+        unsigned long currentMillisPZEM;                      /* current counting time for data collection */
+        const unsigned long periodPZEM = 1000;                // refresh data collection every X seconds (in seconds). Default 1000 = 1 second 
+       
+        /* 2 - Data submission to Blynk Server  */
 
-    void avancer(int vitesse) {
-      digitalWrite(pin_in1, HIGH);
-      digitalWrite(pin_in2, LOW);
-      analogWrite(pin_pwm, vitesse); // 0–255
-    }
+        unsigned long startMillisReadData;                    /* start counting time for data collection*/
+        unsigned long currentMillisReadData;                  /* current counting time for data collection*/
+        const unsigned long periodReadData = 1000;            /* refresh every X seconds (in seconds) in LED Display. Default 1000 = 1 second */
+        int ResetEnergy = 0;                                  /* reset energy function */
+        int a = 1;
+        unsigned long startMillis1;                           // to count time during initial start up (PZEM Software got some error so need to have initial pending time)
+      
+ void setup() 
+{
+        /* General*/
+        
+        startMillis1 = millis();
+        
+        Serial.begin(9600);                                   /* to display readings in Serial Monitor at 9600 baud rates */
+        PZEMSerial.begin(9600);              // 4 = Rx/R0/ GPIO 4 (D2) & 0 = Tx/DI/ GPIO 0 (D3) on NodeMCU 
+/* 1- PZEM-014/016 AC Energy Meter */
+        
+        startMillisPZEM = millis();                           /* Start counting time for run code */            
+      //  pinMode(MAX485_RE, OUTPUT);                           /* Define RE Pin as Signal Output for RS485 converter. Output pin means Arduino command the pin signal to go high or low so that signal is received by the converter*/
+       // pinMode(MAX485_DE, OUTPUT);                           /* Define DE Pin as Signal Output for RS485 converter. Output pin means Arduino command the pin signal to go high or low so that signal is received by the converter*/
+ //       digitalWrite(MAX485_RE, 0);                           /* Arduino create output signal for pin RE as LOW (no output)*/
+   //     digitalWrite(MAX485_DE, 0);                           /* Arduino create output signal for pin DE as LOW (no output)*/
+                                                              /* both pins no output means the converter is in communication signal receiving mode */
+//        node.preTransmission(preTransmission);                /* Callbacks allow us to configure the RS485 transceiver correctly*/
+ //       node.postTransmission(postTransmission);
+        node.begin(pzemSlaveAddr,PZEMSerial);                 /* Define and start the Modbus RTU communication. Communication to specific slave address and which Serial port */
+        delay(1000);                                          /* after everything done, wait for 1 second */
+       
+       /* 2 - Data submission to Blynk Server */
 
-    void reculer(int vitesse) {
-      digitalWrite(pin_in1, LOW);
-      digitalWrite(pin_in2, HIGH);
-      analogWrite(pin_pwm, vitesse);
-    }
+        startMillisReadData = millis();                       /* Start counting time for data submission to Blynk Server*/
 
-    void arreter() {
-      digitalWrite(pin_in1, LOW);
-      digitalWrite(pin_in2, LOW);
-      analogWrite(pin_pwm, 0);
-    }
-};
+
+}
+
+
+
+     
+void loop() 
+{
+       
+        /* 0- General */
+        
+        //Blynk.run();
+        //PZEM_act(0x01);                                          /* allow the communication between Blynk server and Node MCU */
+        if ((millis()- startMillis1 >= 10000) && (a ==1))
+        {   
+//          changeAddress(0XF8, pzemSlaveAddr);                 // By delete the double slash symbol, the meter address will be set as 0x01. 
+                                                              // By default I allow this code to run every program startup. Will not have effect if you only have 1 meter
+          a = 0;
+        }
+        
+        /* 1- PZEM-014/016 AC Energy Meter */
+
+        currentMillisPZEM = millis();                                                                     /* count time for program run every second (by default)*/
+        if (currentMillisPZEM - startMillisPZEM >= periodPZEM)                                            /* for every x seconds, run the codes below*/
+        {    
+          uint8_t result;                                                                                 /* Declare variable "result" as 8 bits */   
+          result = node.readInputRegisters(0x0000, 9);                                                    /* read the 9 registers (information) of the PZEM-014 / 016 starting 0x0000 (voltage information) kindly refer to manual)*/
+          if (result == node.ku8MBSuccess)                                                                /* If there is a response */
+            {
+              uint32_t tempdouble = 0x00000000;                                                           /* Declare variable "tempdouble" as 32 bits with initial value is 0 */ 
+              PZEMVoltage = node.getResponseBuffer(0x0000) / 10.0;                                        /* get the 16bit value for the voltage value, divide it by 10 (as per manual) */
+                                                                                                          // 0x0000 to 0x0008 are the register address of the measurement value
+              tempdouble =  (node.getResponseBuffer(0x0002) << 16) + node.getResponseBuffer(0x0001);      /* get the currnet value. Current value is consists of 2 parts (2 digits of 16 bits in front and 2 digits of 16 bits at the back) and combine them to an unsigned 32bit */
+              PZEMCurrent = tempdouble / 1000.00;                                                         /* Divide the value by 1000 to get actual current value (as per manual) */
+              
+              tempdouble =  (node.getResponseBuffer(0x0004) << 16) + node.getResponseBuffer(0x0003);      /* get the power value. Power value is consists of 2 parts (2 digits of 16 bits in front and 2 digits of 16 bits at the back) and combine them to an unsigned 32bit */
+              PZEMPower = tempdouble / 10.0;                                                              /* Divide the value by 10 to get actual power value (as per manual) */
+              
+              tempdouble =  (node.getResponseBuffer(0x0006) << 16) + node.getResponseBuffer(0x0005);      /* get the energy value. Energy value is consists of 2 parts (2 digits of 16 bits in front and 2 digits of 16 bits at the back) and combine them to an unsigned 32bit */
+              PZEMEnergy = tempdouble;                                                                    
+  
+              PZEMHz = node.getResponseBuffer(0x0007) / 10.0;                                             /* get the 16bit value for the frequency value, divide it by 10 (as per manual) */
+              PZEMPf = node.getResponseBuffer(0x0008) / 100.00;                                           /* get the 16bit value for the power factor value, divide it by 100 (as per manual) */
+              
+        /* 2 - Data submission to Blynk Server  
+        currentMillisReadData = millis();                                                                 // Set counting time for data submission to server
+        if (currentMillisReadData - startMillisReadData >= periodReadData)                                // for every x seconds, run the codes below*/
+          //{
+            Serial.print("Vac : "); Serial.print(PZEMVoltage); Serial.println(" V ");
+            Serial.print("Iac : "); Serial.print(PZEMCurrent); Serial.println(" A ");
+            Serial.print("Power : "); Serial.print(PZEMPower); Serial.println(" W ");
+            Serial.print("Energy : "); Serial.print(PZEMEnergy); Serial.println(" Wh ");
+            Serial.print("Power Factor : "); Serial.print(PZEMPf); Serial.println(" pF ");
+            Serial.print("Frequency : "); Serial.print(PZEMHz); Serial.println(" Hz ");
+          
+          //  startMillisReadData = millis();                                                /* Set the starting point again for next counting time */
+         // }
+          
+
+              if (pzemSlaveAddr==2)                                                                       /* just for checking purpose to see whether can read modbus*/
+                {
+                  Serial.println();
+
+                }
+            } 
+              else
+                {
+                  Serial.println("Failed to read modbus");
+                }
+              startMillisPZEM = currentMillisPZEM ;                                                       /* Set the starting point again for next counting time */
+        }
+
+
+
+}   
+
+//void preTransmission()                                                                                     transmission program when triggered*/
+/*{
+  
+   1- PZEM-014/016 AC Energy Meter 
+        if(millis() - startMillis1 > 5000)                                                                // Wait for 5 seconds as ESP Serial cause start up code crash
+        {
+          digitalWrite(MAX485_RE, 1);                                                                      put RE Pin to high
+          digitalWrite(MAX485_DE, 1);                                                                      put DE Pin to high
+          delay(1);                                                                                       // When both RE and DE Pin are high, converter is allow to transmit communication
+        }
+}*/
+
+/*void postTransmission()                                                                                   /* Reception program when triggered
+{
+        
+        /* 1- PZEM-014/016 AC Energy Meter */
+       /* if(millis() - startMillis1 > 5000)                                                                // Wait for 5 seconds as ESP Serial cause start up code crash
+        {
+          delay(3);                                                                                       // When both RE and DE Pin are low, converter is allow to receive communication
+          digitalWrite(MAX485_RE, 0);                                                                     /* put RE Pin to low
+          digitalWrite(MAX485_DE, 0);                                                                     /* put DE Pin to low
+        //}
+}*/
+
+void PZEM_act(uint8_t slaveAddr)                                       // Virtual push button is defined as V7 of Blynk App. When the button is pushed, it will activate the codes  
+        {
+        
+            uint16_t u16CRC = 0xFFFF;                         /* declare CRC check 16 bits*/
+            static uint8_t resetCommand = 0x42;               /* reset command code*/
+           // uint8_t slaveAddr =pzemSlaveAddr;
+            u16CRC = crc16_update(u16CRC, slaveAddr);
+            u16CRC = crc16_update(u16CRC, resetCommand);
+  //          preTransmission();                                /* trigger transmission mode*/                
+            PZEMSerial.write(slaveAddr);                          /* send device address in 8 bit*/
+            PZEMSerial.write(resetCommand);                       /* send reset command */
+            PZEMSerial.write(lowByte(u16CRC));                    /* send CRC check code low byte  (1st part) */
+            PZEMSerial.write(highByte(u16CRC));                   /* send CRC check code high byte (2nd part) */ 
+            
+            delay(10);
+ //           postTransmission();                               /* trigger reception mode*/
+            delay(100);
+          
+          while (PZEMSerial.available())
+{
+Serial.print(char(PZEMSerial.read()), HEX); 
+Serial.print(" ");
+}
+        }
+
+void changeAddress(uint8_t OldslaveAddr, uint8_t NewslaveAddr)                                            //Change the slave address of a node
+{
+
+        /* 1- PZEM-014/016 AC Energy Meter */
+        
+        static uint8_t SlaveParameter = 0x06;                                                             /* Write command code to PZEM */
+        static uint16_t registerAddress = 0x0002;                                                         /* Modbus RTU device address command code */
+        uint16_t u16CRC = 0xFFFF;                                                                         /* declare CRC check 16 bits*/
+        u16CRC = crc16_update(u16CRC, OldslaveAddr);                                                      // Calculate the crc16 over the 6bytes to be send
+        u16CRC = crc16_update(u16CRC, SlaveParameter);
+        u16CRC = crc16_update(u16CRC, highByte(registerAddress));
+        u16CRC = crc16_update(u16CRC, lowByte(registerAddress));
+        u16CRC = crc16_update(u16CRC, highByte(NewslaveAddr));
+        u16CRC = crc16_update(u16CRC, lowByte(NewslaveAddr));
+
+        //preTransmission();                                                                                /* trigger transmission mode*/
+      
+        PZEMSerial.write(OldslaveAddr);                                                                       /* these whole process code sequence refer to manual*/
+        PZEMSerial.write(SlaveParameter);
+        PZEMSerial.write(highByte(registerAddress));
+        PZEMSerial.write(lowByte(registerAddress));
+        PZEMSerial.write(highByte(NewslaveAddr));
+        PZEMSerial.write(lowByte(NewslaveAddr));
+        PZEMSerial.write(lowByte(u16CRC));
+        PZEMSerial.write(highByte(u16CRC));
+        delay(10);
+        //postTransmission();                                                                               /* trigger reception mode*/
+        delay(100);
+
+while (PZEMSerial.available())
+{
+Serial.print(char(PZEMSerial.read()), HEX); 
+Serial.print(" ");
+}
+
+}
+
 
   </code></pre>
 </div>
+                 
+      <div class="jt-skills">
+        <span class="jt-skill primary">Power Measurement (PZEM-016)</span>
+        <span class="jt-skill primary">Modbus RTU Protocol</span>
+        <span class="jt-skill primary">RS485 Communication</span>
+        <span class="jt-skill primary">Arduino C++ Programming</span>
+        <span class="jt-skill">Real-Time Data Acquisition</span>
+        <span class="jt-skill">Voltage &amp; Current Monitoring</span>
+        <span class="jt-skill">Power Factor Measurement</span>
+        <span class="jt-skill">Energy Consumption Logging</span>
+        <span class="jt-skill">TTL-to-RS485 Interface</span>
+        <span class="jt-skill">Serial Communication (UART)</span>
+        <span class="jt-skill">Machine Protection Logic</span>
+        <span class="jt-skill">Predictive Maintenance Approach</span>
+        <span class="jt-skill">Risk Management (Electrical)</span>
+        <span class="jt-skill">Embedded Systems</span>
+      </div>
 
-    </div>
-
-  </div>
-
-</section>
-
-<section class="project">
-
-  <div class="project-header fade-in">
-    <h1>🤖 Robot Suiveur Autonome</h1>
-    <p class="subtitle">
-      Robot intelligent capable de suivre un utilisateur grâce au GPS, Bluetooth et capteurs embarqués.
-    </p>
-  </div>
-
-  <div class="project-content">
-
-    <!-- LEFT -->
-    <div class="project-text slide-left">
-
-      <h2>👥 Équipe</h2>
-      <ul class="team">
-        <li>Paul PAQUIN</li>
-        <li>Grégoire PICHEREAU</li>
-        <li>Baptiste SCHMITT</li>
-        <li>Ruyi ZHENG</li>
+      <ul class="jt-bullets">
+        <li>Designed and built a <strong>real-time electrical power monitoring system</strong> using a Peacefair PZEM-016 AC power meter, a TTL-to-RS485 converter, and an Arduino UNO — communicating over the <strong>Modbus RTU industrial protocol</strong>.</li>
+        <li>Programmed the full <strong>Modbus RTU polling logic in C++</strong> on Arduino — sending query frames to the PZEM-016 every 2 seconds, parsing the response, and extracting 5 simultaneous measurements: voltage, current, active power, power factor, and cumulative energy (Wh).</li>
+        <li>Achieved <strong>timestamped real-time logging</strong> of all electrical parameters to the Arduino Serial Monitor — providing a continuous, readable data stream suitable for consumption analysis and anomaly detection.</li>
+        <li>Demonstrated practical applications in <strong>consumption control</strong> (detecting overconsumption circuits), <strong>machine protection</strong> (current threshold monitoring), and <strong>predictive maintenance</strong> (energy degradation pattern tracking over time).</li>
+        <li>Validated the <strong>RS485 industrial communication standard</strong> in an embedded context — directly applicable to energy monitoring modules inside electrical cabinets, smart meters, and industrial IoT gateways.</li>
       </ul>
 
-      <h2>📌 Contexte</h2>
-      <p>
-        Projet réalisé à IMT Atlantique visant à développer un robot autonome capable de suivre un utilisateur et transporter une charge.
-      </p>
-
-            <h2>📌 Contexte</h2>
-      <p>
-        Projet réalisé à IMT Atlantique visant à développer un robot autonome capable de suivre un utilisateur et transporter une charge.
-      </p>
-
-      <h2>⚙️ Technologies</h2>
-      <div class="tech-stack">
-        <span>Arduino</span>
-        <span>C++</span>
-        <span>Android</span>
-        <span>Bluetooth</span>
-        <span>GPS</span>
-      </div>
-
-      <h2>🧠 Fonctionnalités</h2>
-      <ul>
-        <li>Suivi automatique</li>
-        <li>Détection d’obstacles</li>
-        <li>Communication Bluetooth</li>
-        <li>Application Android</li>
-      </ul>
-
-      <a href="https://github.com/paulpaq98/RobotSuiveur" target="_blank" class="btn glow">
-        🔗 Voir le projet
-      </a>
-
     </div>
-
-    <!-- RIGHT -->
-    <div class="project-media slide-right">
-
-      <div class="image-card">
-        <img src="https://telefab.fr/wp-content/uploads/2018/06/image13-1024x557.jpg" alt="Robot">
-      </div>
-      <div class="image-card">
-        <img src="https://telefab.fr/wp-content/uploads/2018/06/image13-1024x557.jpg" alt="Robot">
-      </div>
-      <!-- Usage — paste wherever you need a code block -->
-<div class="code-block">
-  <div class="code-block-header">
-    <span>Moteur.h — C++</span>
-    <button class="copy-btn" onclick="
-      navigator.clipboard.writeText(this.closest('.code-block').querySelector('code').innerText);
-      this.textContent='Copié !';
-      setTimeout(()=>this.textContent='Copier',1500);
-    ">Copier</button>
   </div>
-  <pre><code>
-
-// Classe Moteur — contrôle un moteur DC via L298N
-class Moteur {
-  private:
-    int pin_in1, pin_in2, pin_pwm;
-
-  public:
-    Moteur(int in1, int in2, int pwm) {
-      pin_in1 = in1;
-      pin_in2 = in2;
-      pin_pwm = pwm;
-      pinMode(in1, OUTPUT);
-      pinMode(in2, OUTPUT);
-      pinMode(pwm, OUTPUT);
-    }
-
-    void avancer(int vitesse) {
-      digitalWrite(pin_in1, HIGH);
-      digitalWrite(pin_in2, LOW);
-      analogWrite(pin_pwm, vitesse); // 0–255
-    }
-
-    void reculer(int vitesse) {
-      digitalWrite(pin_in1, LOW);
-      digitalWrite(pin_in2, HIGH);
-      analogWrite(pin_pwm, vitesse);
-    }
-
-    void arreter() {
-      digitalWrite(pin_in1, LOW);
-      digitalWrite(pin_in2, LOW);
-      analogWrite(pin_pwm, 0);
-    }
-};
-
-  </code></pre>
 </div>
-
-    </div>
-
-  </div>
-
-</section>
-		
-		
-		<!-- You can start editing here. -->
+<!-- ── END ENTRY: PZEM-016 Power Monitoring ── -->
             <div class="seemore_bt"><a href="service.html">See More</a></div>
-            </div>
+   </div>
+</div>
+
 
       <!-- portfolio section end -->
       <!-- footer section start -->
