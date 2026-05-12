@@ -592,6 +592,248 @@ Serial.print(" ");
   </div>
 </div>
 <!-- ── END ENTRY: PZEM-016 Power Monitoring ── -->
+
+<!-- ── PROJECT ENTRY: GPRS/MQTT IoT Pump Control — Year-End Upgrade Project ── -->
+<div class="jt-entry">
+
+  <div class="jt-left">
+    <div class="jt-date-badge">
+      2021
+      <span>Year-End<br>Project</span>
+    </div>
+    <div class="jt-vline"></div>
+  </div>
+
+  <div class="jt-dot"></div>
+
+  <div class="jt-card">
+    <div class="jt-card-header">
+      <div>
+        <h3>GSM → IoT Upgrade — GPRS/MQTT Remote Pump Control via Blynk</h3>
+        <p>Embedded Systems &amp; Industrial IoT — SIM900A / Arduino / MQTT, 2021</p>
+      </div>
+      <span class="jt-category-tag">IoT · GPRS · MQTT · Embedded</span>
+    </div>
+
+    <div class="jt-card-body">
+
+      <p class="jt-story">
+        Two years after building the GSM remote control system, I came back to it with
+        a question that engineers ask when a working solution is no longer good enough:
+        <em>what would it take to make this better?</em><br><br>
+        The SMS-based architecture worked. A text message crossed the GSM network,
+        an Arduino parsed it, a relay closed, a pump started. But the model had a
+        ceiling. Commands were fire-and-forget. There was no acknowledgement, no
+        dashboard, no live status — just the silence of a relay that may or may not
+        have operated. Scaling it to more stations meant managing multiple SIM cards
+        and phone numbers. And the interaction model — composing a text message to
+        control an industrial pump — felt, with two more years of perspective, like
+        a workaround rather than a system.<br><br>
+        The upgrade I designed for my 2021 year-end project replaced the entire
+        communication layer while leaving the field hardware untouched. The
+        <strong>SIM900A module</strong> — the same module used in the original
+        system — was no longer used as a voice/SMS modem. Instead, it was
+        reconfigured via AT commands to open a <strong>GPRS data connection</strong>
+        and operate as a TCP/IP client on the cellular data network. Over that
+        connection, the Arduino establishes an <strong>MQTT session</strong> with
+        a broker, subscribes to a control topic, and publishes status feedback —
+        transforming what was a one-way text message relay into a
+        <strong>bidirectional, real-time IoT node</strong>.<br><br>
+        The operator interface moved entirely to <strong>Blynk</strong> — a mobile
+        IoT platform that abstracts MQTT into a clean, purpose-built dashboard.
+        A single button widget on the Blynk app publishes to the broker; the Arduino
+        receives the message, drives the relay, and the pump responds in real time.
+        The same physical relay wiring from the original project — R0 parallel to
+        the START button, R1 in series with the STOP contact — remained completely
+        unchanged. Only the signal that triggered them changed: from an SMS string
+        parsed character by character to a clean MQTT payload delivered over a live
+        IP session.<br><br>
+        The significance of this upgrade goes beyond the feature set. It demonstrated
+        a principle that matters in real engineering: <strong>a well-designed
+        field interface does not need to change when the control layer evolves</strong>.
+        The contactor, the relay, the safety chain — all untouched. What changed
+        was the intelligence above them. SMS became MQTT. A phone number became a
+        topic. A text message became a dashboard button. And a system that could
+        only be operated by someone who knew which number to text became one that
+        any authorised user could control from anywhere in the world, with live
+        feedback, through an app on their phone.
+      </p>
+
+      <!-- Video:
+           https://www.youtube.com/watch?v=5WrBpqMnq40
+           Title: "IOT remote control for a well pump using Blynk application"
+           Channel: Omar Dhahri
+           Shows: Live Blynk mobile dashboard controlling a well pump via GPRS/MQTT
+                  over SIM900A — button press triggers relay, pump responds in real time
+      -->
+              <iframe width="100%" height="350"
+               src="https://www.youtube.com/embed/5WrBpqMnq40" controls alt="Live system demo showing Blynk mobile dashboard with real-time water level percentage and distance readings updating as the JSN-SR04T sensor detects changes in water level"
+              frameborder="0" allowfullscreen>
+             </iframe> 
+
+      <div class="jt-skills">
+        <span class="jt-skill primary">GPRS Data Communication (SIM900A)</span>
+        <span class="jt-skill primary">MQTT Protocol Implementation</span>
+        <span class="jt-skill primary">IoT System Architecture</span>
+        <span class="jt-skill">AT Command TCP/IP Stack Configuration</span>
+        <span class="jt-skill">Blynk IoT Platform</span>
+        <span class="jt-skill">Arduino Uno Programming</span>
+        <span class="jt-skill">MQTT Broker Integration</span>
+        <span class="jt-skill">Pub/Sub Topic Design</span>
+        <span class="jt-skill">Relay Control Interface (Preserved)</span>
+        <span class="jt-skill">Bidirectional Real-Time Control</span>
+        <span class="jt-skill">Mobile Dashboard Design</span>
+        <span class="jt-skill">System Upgrade &amp; Architecture Migration</span>
+        <span class="jt-skill">GSM → GPRS Protocol Transition</span>
+        <span class="jt-skill">Cellular IP Networking</span>
+        <span class="jt-skill">Three-Phase Motor Remote Control</span>
+      </div>
+
+      <ul class="jt-bullets">
+        <li>Upgraded the 2019 GSM remote control system from <strong>SMS-based one-way command delivery</strong> to a fully bidirectional <strong>GPRS/MQTT IoT architecture</strong> — using the same SIM900A hardware module, reconfigured from SMS modem to GPRS TCP/IP client via AT commands.</li>
+        <li>Established a live <strong>MQTT session over the cellular data network</strong> from the Arduino, enabling the microcontroller to subscribe to control topics and publish status feedback in real time — replacing fire-and-forget SMS with a persistent, acknowledged communication channel.</li>
+        <li>Integrated <strong>Blynk</strong> as the operator interface — mapping dashboard button widgets to MQTT publish events, delivering on-demand pump control from any mobile device worldwide without requiring knowledge of SIM numbers or message formatting.</li>
+        <li><strong>Preserved the entire field wiring layer</strong> from the original project — relay R0 (parallel to START) and R1 (series with STOP) remained unchanged, demonstrating that a clean hardware abstraction allows the control layer to evolve independently of the physical installation.</li>
+        <li>Validated the system end-to-end in a <strong>live recorded demonstration</strong>: Blynk mobile dashboard commanding a well pump over GPRS, with the motor responding in real time — published on YouTube as proof of working operation.</li>
+        <li>Demonstrated a core engineering principle: <strong>modular system design allows protocol-layer migration without field-level rework</strong> — the same contactor, the same safety chain, the same relay interface, now driven by a modern IoT stack instead of raw SMS parsing.</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+<!-- ── END ENTRY: GPRS/MQTT IoT Pump Control — Year-End Upgrade Project ── -->
+
+<!-- ── PROJECT ENTRY: GSM Remote Control System — Bachelor Graduation Project ── -->
+<div class="jt-entry">
+
+  <div class="jt-left">
+    <div class="jt-date-badge">
+      2019
+      <span>Bachelor<br>Project</span>
+    </div>
+    <div class="jt-vline"></div>
+  </div>
+
+  <div class="jt-dot"></div>
+
+  <div class="jt-card">
+    <div class="jt-card-header">
+      <div>
+        <h3>GSM Remote Control System for Industrial Water Pumps — Bachelor Graduation Project</h3>
+        <p>Embedded Systems &amp; Industrial Automation — SIM900 / Arduino Uno, 2019</p>
+      </div>
+      <span class="jt-category-tag">Embedded · GSM · Electrical Control</span>
+    </div>
+
+    <div class="jt-card-body">
+
+      <p class="jt-story">
+        The problem was deceptively simple: four submersible water pumps, spread across
+        four boreholes up to <strong>12 kilometres apart</strong>, all feeding a single
+        central reservoir — and every one of them still started and stopped by a human
+        being physically present at the site. In a region where borehole infrastructure
+        is critical and operators cannot be everywhere at once, that dependency on
+        physical presence was not just inconvenient. It was a structural limitation of
+        the entire water supply system.<br><br>
+        For my bachelor graduation project, I chose to remove that limitation entirely
+        — using nothing more than the GSM network that already covered the region.<br><br>
+        The system I designed and built is a <strong>distributed embedded control
+        architecture</strong>. At its core sits a pilot unit: an <strong>Arduino Uno
+        microcontroller</strong> paired with a <strong>SIM900 GSM module</strong>,
+        communicating with the outside world through SMS. When a simple text message
+        — "ON" or "OFF" — is received, the Arduino parses the incoming message via
+        AT commands over the serial UART interface and translates it into a precise
+        electrical action. "ON" triggers <strong>Relay R0</strong>, whose contacts are
+        wired in parallel with the physical START button (Bpm) of the motor's control
+        circuit — momentarily closing the contactor coil KM1 exactly as a finger on
+        a green button would. "OFF" triggers <strong>Relay R1</strong>, wired in series
+        with the physical STOP button (Bpa) of the circuit — breaking the coil supply
+        and dropping the contactor out cleanly, with no risk of bypassing the
+        thermal overload relay RT that protects the motor.<br><br>
+        The intelligence of this approach is in what it does not touch. The original
+        electrical installation — the fuse protection CC, the emergency stop AT, the
+        overload relay, the Schneider contactors KM1 and KM2, the three-phase power
+        path to the submersible pump — remains exactly as designed, fully intact and
+        fully protected. The embedded system acts only on the <strong>command circuit</strong>,
+        not on the power circuit. This means the safety logic of the original panel
+        is never compromised: thermal faults still trip, manual overrides still work,
+        and the system degrades gracefully if the microcontroller is ever unavailable.<br><br>
+        Each remote borehole station replicates the same architecture — its own
+        Arduino receiver, its own SIM900 module, its own dual-relay interface to the
+        local electrical cabinet — all addressable independently through the GSM
+        network. The pilot unit broadcasts the command; the receiver units act on
+        it. The result is a <strong>one-to-many remote control topology</strong> over
+        infrastructure that already exists in every corner of the country.<br><br>
+        The complete system was validated through a live demonstration: a three-phase
+        motor controlled entirely by SMS, starting and stopping on command, with LED
+        status indicators confirming relay state in real time. What began as a
+        graduation project was, in practice, a functional industrial remote control
+        unit — built from first principles, documented in full, and demonstrated
+        working.
+      </p>
+
+      <!-- Slides used as diagrams (10):
+           slide-01 — Control circuit schematic: single-phase supply, fuse CC, emergency stop AT, START/STOP push buttons Bpm/Bpa, contactor coil KM1 (A1/A2) — the existing circuit the system interfaces with
+           slide-02 — Full power circuit: three-phase L1/L2/L3/N, isolator Q1, fuse block CC, main contactor KM1, star-delta contactor KM2, thermal overload relay RT, and submersible pump Pmp
+           slide-03 — Relay integration schematic: control ladder showing R0 (parallel to Bpm/START) and R1 (series with Se/STOP) — physical button substitution logic diagram with component photo references
+           slide-04 — Application context diagram: industrial water reservoir fed by pumping system and transfer system supplying laundry/processing facilities
+           slide-05 — Field topology map: four boreholes (Forage 1–4) positioned 7–12 km apart, each with submersible pump and control cabinet, all feeding the central reservoir
+           slide-06 — System network diagram: pilot Arduino+SIM900 broadcasting ON/OFF commands via GSM to three independent receiver stations — each controlling a local pump, with error feedback path shown
+           slide-07 — Full system block diagram: SIM900 ↔ Arduino (AT commands via Tx/Rx) ↔ 2×Relay (0–5V/220V AC) → electrical cabinet; receiver side: SIM900 ↔ Arduino ↔ LED indicators + push button feedback
+           slide-08 — Hardware wiring diagram: Arduino Uno pinout connected to relay module (A0–A2 analog pins, +5V, GND) — relay output wired to contactor coil KM1 terminals A1/A2
+           slide-09 — Physical prototype photo: hand-soldered perfboard prototype with IC socket, LED indicators, relay headers, and colour-coded jumper wires — alongside SIM900A module wiring diagram (GND/TX/RX/VCC)
+           slide-10 — Complete closed-loop system diagram: SIM900 receiver → Arduino + dual relay → pump → reservoir → flow meter → level sensor → Arduino transmitter → SIM900 sender → GSM loop back
+      -->
+      <div class="jt-gallery">
+        <img src="images/gsm-01.png" alt="Control circuit schematic showing single-phase supply with fuse protection CC, emergency stop AT, START push button Bpm and STOP push button Bpa wired to contactor coil KM1 (A1/A2) — the original manual control circuit the relay system interfaces with">
+        <img src="images/gsm-02.png" alt="Full three-phase power circuit diagram: isolator Q1, fuse block, main contactor KM1, star-delta contactor KM2, thermal overload relay RT, and submersible pump Pmp connected to L1/L2/L3/N supply">
+        <img src="images/gsm-03.png" alt="Relay integration ladder schematic showing R0 wired in parallel with the START button (Bpm) and R1 wired in series with the STOP contact — with photos of push buttons, relay modules, and Schneider contactor showing physical substitution mapping">
+        <img src="images/gsm-04.png" alt="Application context diagram: industrial water treatment reservoir supplying both a pumping system feeding elevated storage and a transfer system distributing water to downstream processing facilities">
+        <img src="images/gsm-05.png" alt="Field topology map showing four boreholes (Forage 1, 2, 3, 4) positioned 7 km, 10 km, and 12 km apart with submersible pumps and local control cabinets, all pumping toward the central reservoir">
+        <img src="images/gsm-06.jpg" alt="GSM network control diagram: central pilot Arduino and SIM900 broadcasting ON command triggering Démarrage at one receiver, OFF command triggering Arrêt at another, and error feedback SMS path shown from a third station">
+      </div>
+
+              <iframe width="100%" height="350"
+               src="https://www.youtube.com/embed/OpTgUdIc_Ro" controls alt="Live system demo showing Blynk mobile dashboard with real-time water level percentage and distance readings updating as the JSN-SR04T sensor detects changes in water level"
+              frameborder="0" allowfullscreen>
+             </iframe> 
+
+      <div class="jt-skills">
+        <span class="jt-skill primary">Embedded System Design</span>
+        <span class="jt-skill primary">GSM Remote Control (SIM900)</span>
+        <span class="jt-skill primary">Arduino Uno Programming</span>
+        <span class="jt-skill">AT Command Communication (UART/Serial)</span>
+        <span class="jt-skill">SMS Parsing &amp; Command Decoding</span>
+        <span class="jt-skill">Relay Logic Design</span>
+        <span class="jt-skill">Control Circuit Interfacing</span>
+        <span class="jt-skill">Contactor Coil Wiring (KM1/KM2)</span>
+        <span class="jt-skill">Parallel Button Substitution (R0 / START)</span>
+        <span class="jt-skill">Series STOP Circuit Integration (R1)</span>
+        <span class="jt-skill">Thermal Overload Protection Preservation</span>
+        <span class="jt-skill">Three-Phase Motor Control</span>
+        <span class="jt-skill">Distributed Control Architecture</span>
+        <span class="jt-skill">Perfboard Prototype Assembly</span>
+        <span class="jt-skill">Electrical Schematic Design</span>
+        <span class="jt-skill">System Documentation &amp; Presentation</span>
+      </div>
+
+      <ul class="jt-bullets">
+        <li>Designed and built a <strong>GSM-based remote control system</strong> for industrial submersible water pumps as a bachelor graduation project — addressing the real operational challenge of controlling pump stations spread up to 12 km apart without requiring physical operator presence.</li>
+        <li>Architected a <strong>distributed embedded system</strong> with one pilot unit (Arduino Uno + SIM900) broadcasting SMS commands to multiple independent receiver nodes, each locally controlling its own pump station via the GSM network.</li>
+        <li>Implemented a precise <strong>relay-to-control-circuit interface</strong>: Relay R0 wired in parallel with the physical START button (Bpm) to energise contactor coil KM1 on "ON" command, and Relay R1 wired in series with the STOP contact to de-energise the coil on "OFF" command — replicating manual button actions in software.</li>
+        <li>Preserved the <strong>full electrical safety chain</strong> of the original installation — fuse protection, emergency stop, and thermal overload relay RT remain active and functional — by acting exclusively on the command circuit without modifying the power path.</li>
+        <li>Programmed the Arduino to communicate with the SIM900 via <strong>AT commands over UART</strong> — parsing incoming SMS messages, extracting the command token, and driving the appropriate relay output within the control cycle.</li>
+        <li>Hand-assembled a <strong>working perfboard prototype</strong> integrating the Arduino, SIM900 GSM module, dual relay module, and LED status indicators — fully tested and demonstrated live with a three-phase motor starting and stopping on SMS command.</li>
+        <li>Produced a complete <strong>design presentation</strong> covering the application context, field topology, system block diagram, circuit schematics, and hardware wiring — published a live demonstration video showing end-to-end SMS-to-motor control in operation.</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+<!-- ── END ENTRY: GSM Remote Control System — Bachelor Graduation Project ── -->
+
+				  
+				  
             <div class="seemore_bt"><a href="service.html">See More</a></div>
    </div>
 </div>
