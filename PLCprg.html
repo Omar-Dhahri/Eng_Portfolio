@@ -73,137 +73,681 @@
             </div>
          </div>
 
-     <!-- project timeline section Begin -->
+         
+<div class="journey-timeline">
+  <div class="container">
 
-<div class="projects-timeline">
 
-  <div class="tl-item">
-    <div class="tl-left">
-      <div class="tl-num">1</div>
-      <div class="tl-line"></div>
+<!-- ── PROJECT ENTRY: Ejection Sorting Station — Structured Text (Allen Bradley) ── -->
+<div class="jt-entry">
+
+  <div class="jt-left">
+    <div class="jt-date-badge">
+      PLC
+      <span>Sorting<br>System</span>
     </div>
-    <div class="tl-card">
-      <div class="tl-top">
-        <h3 class="tl-title">Filling Tank — Timer-Based Process Control</h3>
-        <span class="tl-badge badge-starter">Starter</span>
-      </div>
-      <p class="tl-desc">Automated tank filling and emptying using multiple coordinated timers, with overfill prevention and drain safety logic.</p>
-      <div class="tl-tags">
-        <span class="tag tag-plc">S7-300</span>
-        <span class="tag tag-lang">Ladder Logic</span>
-        <span class="tag">Factory IO</span>
-        <span class="tag">PLCSim</span>
-        <span class="tag">TIA Portal</span>
-      </div>
-      <iframe width="100%" height="350"
-        src="https://www.youtube.com/embed/-HWE6mL5Ww0"
-        frameborder="0" allowfullscreen>
-      </iframe>
-    </div>
+    <div class="jt-vline"></div>
   </div>
 
-  <div class="tl-item">
-    <div class="tl-left">
-      <div class="tl-num">2</div>
-      <div class="tl-line"></div>
-    </div>
-    <div class="tl-card">
-      <div class="tl-top">
-        <h3 class="tl-title">Pick & Place — Sensor-Driven Control</h3>
-        <span class="tl-badge badge-beginner">Beginner</span>
-      </div>
-      <p class="tl-desc">Seamless pick, move and place actions with precise actuator timing and conveyor synchronization — zero item loss during transitions.</p>
-      <div class="tl-tags">
-        <span class="tag tag-plc">S7-300</span>
-        <span class="tag tag-lang">Ladder Logic</span>
-        <span class="tag">Factory IO</span>
-        <span class="tag">PLCSim</span>
-        <span class="tag">TIA Portal</span>
-      </div>
-      <iframe width="100%" height="350"
-        src="https://www.youtube.com/embed/RLaNHpVq5wc"
-        frameborder="0" allowfullscreen>
-      </iframe>
-    </div>
-  </div>
+  <div class="jt-dot"></div>
 
-  <div class="tl-item">
-    <div class="tl-left">
-      <div class="tl-num">3</div>
-      <div class="tl-line"></div>
-    </div>
-    <div class="tl-card">
-      <div class="tl-top">
-        <h3 class="tl-title">Sorting by Height — Modular Ladder Logic</h3>
-        <span class="tl-badge badge-intermediate">Intermediate</span>
-      </div>
-      <p class="tl-desc">Multi-sensor orchestration for height detection and sorting, with collision avoidance and edge case simulation including sensor failures and delays.</p>
-      <div class="tl-tags">
-        <span class="tag tag-plc">S7-1500</span>
-        <span class="tag tag-lang">Ladder Logic</span>
-        <span class="tag">Factory IO</span>
-        <span class="tag">PLCSim</span>
-        <span class="tag">TIA Portal</span>
-      </div>
-      <iframe width="100%" height="350"
-        src="https://www.youtube.com/embed/Def7Gbe8E8c"
-        frameborder="0" allowfullscreen>
-      </iframe>
-    </div>
-  </div>
+  <div class="jt-card">
 
-  <div class="tl-item">
-    <div class="tl-left">
-      <div class="tl-num">4</div>
-      <div class="tl-line"></div>
+    <div class="jt-card-header">
+      <div>
+        <h3>Ejection Sorting Station — Structured Text (Allen Bradley)</h3>
+        <p>Allen-Bradley · Structured Text · Factory IO + CCW Simulation</p>
+      </div>
+      <span class="jt-category-tag">Intermediate · Discrete Automation</span>
     </div>
-    <div class="tl-card">
-      <div class="tl-top">
-        <h3 class="tl-title">Ejection Sorting Station — Structured Text</h3>
-        <span class="tl-badge badge-intermediate">Intermediate</span>
-      </div>
-      <p class="tl-desc">Sorting station using diffuse sensors for size detection with a full control panel: Start/Stop, E-Stop with Reset, status lights and real-time box counters.</p>
-      <div class="tl-tags">
-        <span class="tag tag-plc">Allen-Bradley</span>
-        <span class="tag tag-lang">Structured Text</span>
-        <span class="tag">Factory IO</span>
-        <span class="tag">CCW</span>
-        <span class="tag">UDFB</span>
-      </div>
+
+    <div class="jt-card-body">
+
+      <p class="jt-story">
+        Industrial sorting systems are where control logic meets real-world chaos: variable object sizes, imperfect sensor readings, and strict timing constraints that must still produce deterministic results.  
+        This project was designed to replicate that environment as closely as possible using a fully simulated ejection sorting station built around <strong>Allen-Bradley Structured Text programming</strong>.<br><br>
+
+        The system processes moving boxes on a conveyor using <strong>diffuse photoelectric sensors</strong> to detect object size and position. Based on this detection, the PLC executes a decision-making sequence that routes each object to the correct output lane using an ejection mechanism. What makes this system more than a basic sorting demo is the control architecture behind it: a structured, state-driven logic model written entirely in <strong>Structured Text</strong>, designed to behave like a real industrial controller rather than a simple classroom exercise.<br><br>
+
+        A complete operator panel was integrated into the logic design, including <strong>Start/Stop commands, emergency stop with reset logic, status indicators, and real-time production counters</strong>. Each signal was mapped into a clear operational state machine, ensuring that the system always remains in a defined condition — whether running, paused, faulted, or reset. Special attention was given to safety conditions: emergency stop overrides, restart sequencing, and controlled reinitialization after faults were all explicitly handled in the program flow.<br><br>
+
+        The logic was developed and validated using <strong>Factory IO</strong> as a real-time 3D industrial environment, connected to an <strong>Allen-Bradley control simulation through CCW (Connected Components Workbench)</strong>. This setup allowed full testing of conveyor dynamics, sensor triggering, and actuator response under realistic timing conditions. Every box detection, every ejection decision, and every counter update was visually verified in a live virtual plant environment — mirroring how modern automation engineers validate discrete manufacturing systems before deployment.
+      </p>
+
       <iframe width="100%" height="350"
         src="https://www.youtube.com/embed/_HwbrTCRG2M"
         frameborder="0" allowfullscreen>
       </iframe>
+
+<div class="code-block">
+  <div class="code-block-header">
+    <span>Ejection Sorting Station Allen Bradley.pas — Structured Text</span>
+    <button class="copy-btn" onclick="
+      navigator.clipboard.writeText(this.closest('.code-block').querySelector('code').innerText);
+      this.textContent='Copié !';
+      setTimeout(()=>this.textContent='Copier',1500);
+    ">Copier</button>
+  </div>
+  <pre><code>
+//E_stop_condition Latch
+if NOT BOOL_IN_0 THEN
+E_stop_condition := TRUE;
+END_IF;	
+//E_stop_condition Unlatch
+if BOOL_IN_0 and BOOL_IN_3 THEN
+E_stop_condition := FALSE;
+END_IF;
+
+//RESET Required
+BOOL_OUT_6 := BOOL_IN_0 and E_stop_condition;
+
+//Conveyor Latch
+if not E_stop_condition and BOOL_IN_1 THEN
+BOOL_OUT_0 := TRUE;
+END_IF;
+//Conveyor Unlatch
+Stopconv_RE := Stop_Conv AND NOT Stopconv_prev;
+if (not E_stop_condition and not BOOL_IN_2) or E_stop_condition OR Stopconv_RE THEN
+BOOL_OUT_0 := FALSE;
+END_IF;
+Stopconv_prev := Stop_Conv;
+
+//Buttons lights 
+BOOL_OUT_3 := not BOOL_IN_1;
+BOOL_OUT_5 := BOOL_IN_3;
+BOOL_OUT_4 := NOT BOOL_IN_2;
+//State Indicators (Lights)
+BOOL_OUT_1 := BOOL_OUT_0;
+BOOL_OUT_2 := NOT BOOL_OUT_0;
+
+//Emiter Logic 
+TP_1(IN := (BOOL_IN_4 AND NOT temp AND ((NOT LargeBoxesComplete) OR (NOT SmallBoxesComplete))),
+     PT := T#5s);
+temp := TP_1.Q;
+
+temp_FE := not temp and temp_prev;
+TP_2(IN := (BOOL_IN_4 AND temp_FE),
+     PT := T#200ms);
+BOOL_OUT_7 := TP_2.Q;
+temp_prev := temp;
+
+//Conveyor Auto-Stop
+Ton_1(IN := (not BOOL_IN_5 AND not BOOL_IN_1),
+     PT := T#30s);
+Stop_Conv := Ton_1.Q;
+
+//PusherLogoic             
+(*edited*)
+if (BOOL_IN_6 AND BOOL_IN_7 and BOOL_IN_10) THEN
+Pusher_Bit := TRUE;
+ END_IF;
+               
+			   
+Ton_3(IN := Pusher_Bit,
+     PT := T#900ms);
+IF Ton_3.Q THEN                                                  
+BOOL_OUT_8 := TRUE;   
+END_IF;       
+
+if BOOL_IN_9 THEN
+BOOL_OUT_8 := FALSE;
+Pusher_Bit := FALSE;
+END_IF; 
+
+
+
+//LargeBoxCountPulse Logic
+	LargeBoxCountPulse := BOOL_IN_7;
+	LargeBoxCountPulse_RE :=  LargeBoxCountPulse and not LargeBoxCountPulse_prev;	
+	if LargeBoxCountPulse_RE THEN
+LargeBoxesCountDINT := LargeBoxesCountDINT +1;
+END_IF;
+LargeBoxCountPulse_prev := LargeBoxCountPulse;
+
+if (LargeBoxesCountDINT >= 15) THEN
+LargeBoxesComplete := TRUE;
+END_IF;
+
+
+//SmallBoxCountPulse Logic
+Ton_2(IN := (BOOL_IN_6 AND NOT BOOL_IN_7),
+     PT := T#50ms);
+
+SmallBoxCountPulse :=  Ton_2.Q;
+	
+	SmallBoxCountPulse_RE := SmallBoxCountPulse and NOT SmallBoxCountPulse_prev; 
+	if  SmallBoxCountPulse_RE  THEN
+SmallBoxesCountDINT := SmallBoxesCountDINT +1;
+END_IF;
+SmallBoxCountPulse_prev := SmallBoxCountPulse;
+
+if (SmallBoxesCountDINT >= 15) THEN
+SmallBoxesComplete := TRUE;
+END_IF;
+
+//Total_Boxes Logic
+sensor_0_RE := BOOL_IN_5 AND NOT sensor_0_prev;
+if sensor_0_RE THEN
+TotalBoxesCountDINT := TotalBoxesCountDINT + 1;
+END_IF;
+sensor_0_prev := BOOL_IN_5;
+
+if (TotalBoxesCountDINT >= 15) THEN
+TotalBoxesComplete := TRUE;
+END_IF;
+
+//Boxes_on_conveyor Logic
+Box_Exit_ST := BOOL_IN_8 OR BOOL_IN_11;
+BoxExit_FE := not Box_Exit_ST and BoxExit_prev;
+CTUD_1( 
+    CU    := BOOL_IN_5,      
+    CD    := BoxExit_FE,    
+    RESET := BOOL_IN_3,  
+	LOAD := FALSE,
+    PV    := 9 );
+
+BoxesonCovnCountDINT := CTUD_1.CV;
+BoxExit_prev := Box_Exit_ST;
+
+
+
+Total_Boxes := TotalBoxesCountDINT;
+INT_OUT_0 := Total_Boxes_1;  (* Total boxes *)
+
+Boxes_on_conveyor := BoxesonCovnCountDINT;
+INT_OUT_1 := Boxes_on_conveyor_1;   (* Boxes on conveyor *)
+
+Small_Boxes := SmallBoxesCountDINT; 
+INT_OUT_2 := Small_Boxes_1;  (* Small boxes *)
+
+Large_Boxes := LargeBoxesCountDINT;
+INT_OUT_3 := Large_Boxes_1;  (* Large boxes *)
+
+FB1_Instance();
+
+//Reset Counters
+if BOOL_IN_3 then
+LargeBoxesCountDINT :=0;
+SmallBoxesCountDINT :=0;
+TotalBoxesCountDINT :=0;
+END_IF;
+   
+  </code></pre>
+</div>
+
+      <div class="jt-skills">
+        <span class="jt-skill primary">Structured Text Programming</span>
+        <span class="jt-skill primary">Discrete Sorting Logic</span>
+        <span class="jt-skill primary">Factory IO Simulation</span>
+        <span class="jt-skill">Allen-Bradley PLC</span>
+        <span class="jt-skill">Connected Components Workbench (CCW)</span>
+        <span class="jt-skill">Sensor-Based Detection Systems</span>
+        <span class="jt-skill">State Machine Design</span>
+        <span class="jt-skill">Industrial Conveyor Control</span>
+        <span class="jt-skill">Ejection Mechanism Logic</span>
+        <span class="jt-skill">Emergency Stop Handling</span>
+        <span class="jt-skill">Real-Time Counters</span>
+        <span class="jt-skill">Process Visualization</span>
+        <span class="jt-skill">Signal Mapping</span>
+        <span class="jt-skill">Fault Handling Logic</span>
+        <span class="jt-skill">Virtual Commissioning</span>
+      </div>
+
+      <ul class="jt-bullets">
+        <li>Developed a <strong>fully automated sorting system</strong> using Structured Text on an Allen-Bradley PLC, where diffuse sensors classify moving objects by size and trigger corresponding ejection actions in real time.</li>
+
+        <li>Implemented a robust <strong>state-machine architecture</strong> handling system modes such as RUN, STOP, FAULT, and RESET, ensuring deterministic behavior under all operational transitions.</li>
+
+        <li>Designed a complete <strong>operator control panel logic</strong> including Start/Stop commands, emergency stop with safe reset sequencing, status indicators, and live production counters for system monitoring.</li>
+
+        <li>Integrated <strong>sensor filtering and decision logic</strong> to eliminate false triggers caused by noise or timing misalignment, ensuring reliable object classification on a moving conveyor.</li>
+
+        <li>Validated the entire system in <strong>Factory IO with CCW simulation</strong>, reproducing real industrial conveyor behavior, actuator response, and sensor interaction in a fully virtual commissioning environment.</li>
+
+        <li>Demonstrated industrial-grade programming practices by structuring the project as a <strong>modular, scalable control system</strong> aligned with real manufacturing automation workflows rather than a simple logic exercise.</li>
+      </ul>
+
     </div>
   </div>
+</div>
+<!-- ── END ENTRY: Ejection Sorting Station — Structured Text (Allen Bradley) ── -->
 
-  <div class="tl-item">
-    <div class="tl-left">
-      <div class="tl-num">5</div>
-      <div class="tl-line"></div>
+
+
+    <!-- ── PROJECT ENTRY: Automated Warehouse — Storage Logic & Path Planning ── -->
+<div class="jt-entry">
+
+  <div class="jt-left">
+    <div class="jt-date-badge">
+      PLC
+      <span>Warehouse<br>Automation</span>
     </div>
-    <div class="tl-card">
-      <div class="tl-top">
-        <h3 class="tl-title">Automated Warehouse — Storage Logic & Path Planning</h3>
-        <span class="tl-badge badge-advanced">Advanced</span>
+    <div class="jt-vline"></div>
+  </div>
+
+  <div class="jt-dot"></div>
+
+  <div class="jt-card">
+    <div class="jt-card-header">
+      <div>
+        <h3>Automated Warehouse — Storage Logic & Path Planning</h3>
+        <p>S7-300 · Ladder Logic · TIA Portal + Factory IO Simulation</p>
       </div>
-      <p class="tl-desc">Full warehouse simulation with storage logic, retrieval strategies and path planning — going beyond linear flows with position indexing and conveyor mapping.</p>
-      <div class="tl-tags">
-        <span class="tag tag-plc">S7-300</span>
-        <span class="tag tag-lang">Ladder Logic</span>
-        <span class="tag">Factory IO</span>
-        <span class="tag">PLCSim</span>
-        <span class="tag">TIA Portal</span>
-      </div>
+      <span class="jt-category-tag">Advanced · Smart Warehousing</span>
+    </div>
+
+    <div class="jt-card-body">
+
+      <p class="jt-story">
+        Modern automated warehouses are no longer limited to simple conveyor
+        transport systems. They operate as highly coordinated
+        <strong>real-time material handling environments</strong>, where storage
+        allocation, retrieval sequencing, motion synchronization, and positional
+        tracking must all function simultaneously without interrupting operational
+        throughput. The engineering challenge is not only moving products — it is
+        maintaining deterministic control over an entire logistics flow while the
+        system continuously evolves in real time.<br><br>
+
+        This project was engineered as a fully automated
+        <strong>warehouse storage and retrieval system</strong> using
+        <strong>Ladder Logic</strong> on a Siemens
+        <strong>S7-300 PLC</strong>. The control architecture managed the
+        complete warehouse lifecycle: pallet intake, storage assignment,
+        positional indexing, rack navigation, retrieval requests, and conveyor
+        coordination across multiple transport zones. Unlike linear automation
+        sequences, the system required dynamic decision-making based on
+        positional availability, routing constraints, and transport-state
+        synchronization.<br><br>
+
+        The automation strategy relied on a
+        <strong>structured path-planning and indexing methodology</strong>.
+        Every storage location was represented through coordinated positional
+        logic, enabling the warehouse crane and conveyor system to navigate
+        accurately between rack levels and transport points. Motion permissions,
+        storage validation, and retrieval authorization were continuously
+        monitored through synchronized interlock conditions to guarantee stable
+        transitions between operational states while preventing undefined
+        movement sequences or storage conflicts.<br><br>
+
+        Particular attention was dedicated to
+        <strong>system synchronization and operational reliability</strong>.
+        Conveyor occupancy states, transfer authorization, positional reset
+        validation, and rack-access timing were integrated directly into the PLC
+        logic to maintain deterministic warehouse behaviour under continuous
+        operation. Sequential verification conditions ensured that no transport
+        or retrieval command could execute unless every prerequisite state had
+        been confirmed, significantly reducing the risk of indexing errors,
+        transport overlap, or unstable transfer conditions.<br><br>
+
+        The entire warehouse environment was developed and validated using
+        <strong>Factory IO</strong> connected live to
+        <strong>PLCSim</strong>, executing the actual compiled S7-300 control
+        program in real time. This virtual commissioning workflow reproduced a
+        fully operational smart warehouse environment where conveyors, storage
+        racks, transfer systems, and positioning mechanisms responded directly
+        to PLC outputs. The simulation enabled continuous validation of path
+        planning behaviour, storage sequencing, transport synchronization, and
+        retrieval accuracy before any physical deployment stage — reflecting the
+        same engineering methodology used in modern industrial intralogistics
+        and warehouse automation projects.
+      </p>
+
       <iframe width="100%" height="350"
         src="https://www.youtube.com/embed/IW2hjUgWJLo"
         frameborder="0" allowfullscreen>
       </iframe>
+
+      <div class="jt-skills">
+        <span class="jt-skill primary">Warehouse Automation</span>
+        <span class="jt-skill primary">Path Planning Logic</span>
+        <span class="jt-skill primary">Storage & Retrieval Systems</span>
+        <span class="jt-skill">Siemens S7-300</span>
+        <span class="jt-skill">Ladder Logic Programming</span>
+        <span class="jt-skill">TIA Portal</span>
+        <span class="jt-skill">Factory IO</span>
+        <span class="jt-skill">PLCSim (Virtual PLC)</span>
+        <span class="jt-skill">Material Handling Systems</span>
+        <span class="jt-skill">Position Indexing</span>
+        <span class="jt-skill">Conveyor Synchronization</span>
+        <span class="jt-skill">Industrial Logistics</span>
+        <span class="jt-skill">Sequential Control Systems</span>
+        <span class="jt-skill">Virtual Commissioning</span>
+        <span class="jt-skill">Industrial Automation</span>
+      </div>
+
+      <ul class="jt-bullets">
+        <li>Designed a fully automated <strong>warehouse storage and retrieval system</strong> using Ladder Logic on a Siemens S7-300 PLC — coordinating pallet intake, rack allocation, retrieval sequencing, and conveyor transport within a synchronized logistics workflow.</li>
+
+        <li>Implemented a <strong>position-indexing and path-planning architecture</strong> enabling deterministic navigation between storage locations, transfer zones, and retrieval points while maintaining stable operational sequencing.</li>
+
+        <li>Engineered <strong>real-time interlock and synchronization logic</strong> between warehouse crane movement, conveyor occupancy states, and transport permissions — preventing conflicting transfer operations and undefined motion conditions.</li>
+
+        <li>Developed modular control sections for <strong>storage management, transport authorization, retrieval validation, and positional tracking</strong>, significantly improving scalability, troubleshooting efficiency, and logic maintainability.</li>
+
+        <li>Validated the complete automation workflow inside <strong>Factory IO</strong> connected live to PLCSim — reproducing real-time warehouse behaviour including transport sequencing, rack navigation, and synchronized retrieval operations without physical hardware.</li>
+
+        <li>Demonstrated how <strong>virtual commissioning methodologies</strong> can be applied to industrial intralogistics systems, enabling path-planning validation, operational stress testing, and control optimization prior to real-world deployment.</li>
+      </ul>
+
     </div>
   </div>
-
 </div>
-      <!-- project timeline section end -->
+<!-- ── END ENTRY: Automated Warehouse — Storage Logic & Path Planning ── -->
+
+    <!-- ── PROJECT ENTRY: Sorting by Height — Modular Ladder Logic ── -->
+<div class="jt-entry">
+
+  <div class="jt-left">
+    <div class="jt-date-badge">
+      PLC
+      <span>Industrial<br>Sorting</span>
+    </div>
+    <div class="jt-vline"></div>
+  </div>
+
+  <div class="jt-dot"></div>
+
+  <div class="jt-card">
+    <div class="jt-card-header">
+      <div>
+        <h3>Sorting by Height — Modular Ladder Logic</h3>
+        <p>S7-1500 · Ladder Logic · TIA Portal + Factory IO Simulation</p>
+      </div>
+      <span class="jt-category-tag">Intermediate · Smart Sorting</span>
+    </div>
+
+    <div class="jt-card-body">
+
+      <p class="jt-story">
+  Modern industrial sorting systems are fundamentally constrained by one
+  requirement: maintaining deterministic behaviour while products continue
+  moving through the process in real time. The challenge is not limited to
+  object detection itself, but to guaranteeing that every classification,
+  routing decision, actuator movement, and conveyor transition remains fully
+  synchronized under continuous operational flow.<br><br>
+
+  This project was engineered as a fully automated
+  <strong>height-based industrial sorting system</strong> using
+  <strong>Ladder Logic</strong> on a Siemens
+  <strong>S7-1500 PLC</strong>. The control architecture was designed to
+  classify products dynamically according to physical dimensions detected
+  through coordinated sensor arrays, then execute the appropriate routing
+  sequence while preserving uninterrupted conveyor throughput and stable
+  material handling conditions.<br><br>
+
+  The automation strategy relied on a
+  <strong>modular PLC program structure</strong>, where detection,
+  classification, conveyor transport, and actuator sequencing were isolated
+  into dedicated logic sections. This approach significantly improved
+  maintainability, troubleshooting efficiency, and future scalability while
+  reducing interdependency between process stages. Sensor states, routing
+  permissions, and actuator transitions were continuously monitored through
+  synchronized interlock conditions to guarantee controlled state progression
+  throughout the entire operational cycle.<br><br>
+
+  Particular attention was dedicated to
+  <strong>sequence reliability and fault-tolerant behaviour</strong>.
+  Conveyor synchronization constraints, actuator reset validation, delayed
+  sensor feedback conditions, and transient object-spacing variations were
+  integrated directly into the control logic to prevent undefined machine
+  states, routing instability, transfer conflicts, or mechanical overlap
+  during high-frequency operation. Timing supervision and conditional state
+  verification ensured that no transfer sequence could advance unless all
+  operational prerequisites were confirmed.<br><br>
+
+  The complete system was developed and validated using
+  <strong>Factory IO</strong> connected in real time to
+  <strong>PLCSim</strong> executing the actual compiled S7-1500 program.
+  This virtual commissioning environment reproduced live industrial conveyor
+  behaviour, enabling continuous validation of sorting accuracy, sequence
+  transitions, sensor coordination, and actuator timing without requiring
+  physical hardware deployment. The workflow mirrors modern industrial
+  automation methodologies where control logic is extensively stress-tested,
+  optimized, and validated in simulation prior to real-world commissioning.
+</p>
+
+      <iframe width="100%" height="350"
+        src="https://www.youtube.com/embed/Def7Gbe8E8c"
+        frameborder="0" allowfullscreen>
+      </iframe>
+
+      <div class="jt-skills">
+        <span class="jt-skill primary">Ladder Logic Programming</span>
+        <span class="jt-skill primary">Industrial Sorting Systems</span>
+        <span class="jt-skill primary">Multi-Sensor Coordination</span>
+        <span class="jt-skill">Siemens S7-1500</span>
+        <span class="jt-skill">TIA Portal</span>
+        <span class="jt-skill">Factory IO</span>
+        <span class="jt-skill">PLCSim (Virtual PLC)</span>
+        <span class="jt-skill">Height Detection Logic</span>
+        <span class="jt-skill">Sequential Control Systems</span>
+        <span class="jt-skill">Conveyor Synchronization</span>
+        <span class="jt-skill">Collision Avoidance Logic</span>
+        <span class="jt-skill">Modular PLC Design</span>
+        <span class="jt-skill">Sensor Fault Handling</span>
+        <span class="jt-skill">Industrial Automation</span>
+        <span class="jt-skill">Virtual Commissioning</span>
+      </div>
+
+      <ul class="jt-bullets">
+        <li>Designed a <strong>modular height-based sorting system</strong> using Ladder Logic on a Siemens S7-1500 PLC — enabling automatic classification and routing of objects through coordinated multi-conveyor sequences.</li>
+
+        <li>Implemented <strong>multi-sensor orchestration logic</strong> to detect object dimensions dynamically and determine the appropriate sorting path while maintaining continuous conveyor operation.</li>
+
+        <li>Engineered <strong>collision-prevention and actuator interlock conditions</strong> to ensure sorting mechanisms returned to safe states before accepting new objects — preventing unstable transitions and transfer conflicts.</li>
+
+        <li>Structured the PLC program using a <strong>modular control architecture</strong>, separating detection, classification, actuator control, and conveyor synchronization into dedicated logic sections for improved scalability and troubleshooting.</li>
+
+        <li>Validated the complete automation workflow inside <strong>Factory IO</strong> connected live to PLCSim — reproducing real-time industrial sorting behaviour including sensor delays, object spacing variation, and sequence timing verification.</li>
+
+        <li>Stress-tested multiple <strong>edge-case scenarios</strong> such as delayed sensor feedback, closely spaced objects, and asynchronous actuator reset conditions — confirming robust system behaviour before any hardware commissioning stage.</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+<!-- ── END ENTRY: Sorting by Height — Modular Ladder Logic ── -->
+
+    <!-- ── PROJECT ENTRY: Pick & Place — Sensor-Driven Conveyor Automation ── -->
+<div class="jt-entry">
+
+  <div class="jt-left">
+    <div class="jt-date-badge">
+      PLC
+      <span>Motion<br>Control</span>
+    </div>
+    <div class="jt-vline"></div>
+  </div>
+
+  <div class="jt-dot"></div>
+
+  <div class="jt-card">
+    <div class="jt-card-header">
+      <div>
+        <h3>Pick & Place — Sensor-Driven Conveyor Automation</h3>
+        <p>S7-300 · Ladder Logic · TIA Portal + Factory IO Simulation</p>
+      </div>
+      <span class="jt-category-tag">Starter · Material Handling</span>
+    </div>
+
+    <div class="jt-card-body">
+
+      <p class="jt-story">
+        In industrial production environments, moving a product from one location
+        to another sounds simple — until timing, synchronization, and motion
+        coordination become part of the equation. A pick-and-place system is not
+        just about detecting an object and activating a mechanism; it is about
+        ensuring every movement happens at exactly the right moment, without
+        collision, missed detection, or unstable positioning.<br><br>
+
+        This project focused on developing a fully automated
+        <strong>sensor-driven pick-and-place sequence</strong> using
+        <strong>Ladder Logic</strong> on a Siemens S7-300 PLC. The system was
+        designed to detect incoming boxes on a conveyor, stop them precisely at
+        the transfer position, activate the pick mechanism, move the item to a
+        target location, and safely release it before restarting the conveyor
+        for the next cycle.<br><br>
+
+        The engineering challenge was not simply making the actuator move —
+        it was coordinating every stage of the sequence so the system behaved
+        like a real industrial material-handling cell. Sensors had to confirm
+        object presence before motion was allowed, conveyor movement needed to
+        pause during transfer operations, and interlocks were implemented to
+        prevent overlapping commands between conveyor and actuator states.
+        Without proper synchronization, the result could easily become dropped
+        products, actuator collisions, or unstable transfer timing.<br><br>
+
+        The complete automation sequence was developed and validated inside
+        <strong>Factory IO</strong>, connected live to
+        <strong>PLCSim</strong> running the actual compiled S7-300 program.
+        This created a fully interactive virtual production cell where sensors,
+        conveyors, and pneumatic movements responded in real time to PLC outputs.
+        Using simulation made it possible to test positioning accuracy, sequence
+        transitions, and actuator timing repeatedly before any physical hardware
+        deployment — the same virtual commissioning approach widely used in
+        modern industrial automation engineering workflows.
+      </p>
+
+      <iframe width="100%" height="350"
+        src="https://www.youtube.com/embed/RLaNHpVq5wc"
+        frameborder="0" allowfullscreen>
+      </iframe>
+
+      <div class="jt-skills">
+        <span class="jt-skill primary">Ladder Logic Programming</span>
+        <span class="jt-skill primary">Pick & Place Automation</span>
+        <span class="jt-skill primary">Conveyor Synchronization</span>
+        <span class="jt-skill">Siemens S7-300</span>
+        <span class="jt-skill">TIA Portal</span>
+        <span class="jt-skill">Factory IO</span>
+        <span class="jt-skill">PLCSim (Virtual PLC)</span>
+        <span class="jt-skill">Sensor-Based Detection</span>
+        <span class="jt-skill">Material Handling Systems</span>
+        <span class="jt-skill">Actuator Coordination</span>
+        <span class="jt-skill">Sequential Control Logic</span>
+        <span class="jt-skill">Industrial Automation</span>
+        <span class="jt-skill">Virtual Commissioning</span>
+        <span class="jt-skill">Interlock Logic</span>
+        <span class="jt-skill">Real-Time Simulation</span>
+      </div>
+
+      <ul class="jt-bullets">
+        <li>Designed a <strong>fully automated pick-and-place sequence</strong> using Ladder Logic on a Siemens S7-300 PLC — coordinating conveyor transport, object positioning, actuator movement, and transfer completion within a synchronized industrial workflow.</li>
+
+        <li>Implemented <strong>sensor-driven detection logic</strong> to monitor box arrival and validate positioning before actuator movement was permitted — ensuring stable transfer conditions and preventing premature mechanical actions.</li>
+
+        <li>Engineered <strong>motion synchronization and interlock conditions</strong> between conveyor and pick mechanism states — preventing overlapping commands, unsafe transitions, and item loss during transfer operations.</li>
+
+        <li>Developed the complete automation cell inside <strong>Factory IO</strong> connected live to PLCSim — enabling real-time interaction between the virtual conveyor system, sensors, and the actual compiled PLC program without physical hardware.</li>
+
+        <li>Validated <strong>sequence timing and transition reliability</strong> through repeated simulation testing — confirming correct object handling, actuator reset behaviour, and continuous cycle stability under automated operation.</li>
+
+        <li>Demonstrated how <strong>virtual commissioning methodologies</strong> can be used to test and optimize industrial material-handling systems before deployment — reducing integration risks and improving control logic reliability.</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+<!-- ── END ENTRY: Pick & Place — Sensor-Driven Conveyor Automation ── -->
+
+         <!-- ── PROJECT ENTRY: Filling Tank — Timer-Based Process Control ── -->
+<div class="jt-entry">
+
+  <div class="jt-left">
+    <div class="jt-date-badge">
+      PLC
+      <span>Process<br>Control</span>
+    </div>
+    <div class="jt-vline"></div>
+  </div>
+
+  <div class="jt-dot"></div>
+
+  <div class="jt-card">
+    <div class="jt-card-header">
+      <div>
+        <h3>Filling Tank — Timer-Based Process Control</h3>
+        <p>S7-300 · Ladder Logic · TIA Portal + Factory IO Simulation</p>
+      </div>
+      <span class="jt-category-tag">Starter · Process Control</span>
+    </div>
+
+    <div class="jt-card-body">
+
+      <p class="jt-story">
+        Every industrial process that moves fluid through a system shares a common
+        challenge: time. Not just how long something takes — but what happens when
+        it takes too long, or not long enough. This project was built around that
+        exact problem.<br><br>
+        The objective was to design a fully automated fill-and-drain cycle for an
+        industrial tank, controlled entirely through <strong>timed sequences in
+        Ladder Logic</strong> on a Siemens S7-300 PLC. The logic had to handle
+        the complete lifecycle: open the inlet valve, monitor fill duration,
+        close it at the correct level, hold, drain on schedule, and wait for the
+        tank to empty before the next cycle could begin — all without a single
+        manual input once the sequence was started.<br><br>
+        But the more interesting engineering was in the edge cases. What if the
+        fill timer expires and the level hasn't been reached — is that a sensor
+        fault or a supply failure? What if the drain cycle is still running when
+        the next fill command arrives? What if power is restored mid-sequence?
+        Each of these scenarios was designed into the logic as explicit states,
+        with safety waits and interlock conditions preventing the system from
+        entering an undefined or dangerous condition.<br><br>
+        The entire project was developed and validated inside
+        <strong>Factory IO</strong> — a professional-grade 3D process simulation
+        platform that renders a live virtual plant responding to real PLC outputs
+        in real time. Connected to <strong>PLCSim</strong>, the simulated S7-300
+        ran the actual compiled program while Factory IO provided the physical
+        feedback: valves opening, tanks filling, drain pumps activating — all
+        visible, all measurable, all testable without a single piece of real
+        hardware. This is exactly how modern automation engineers validate
+        control logic before it ever touches a real process — and it meant
+        every edge case, every timeout scenario, every safety interlock could
+        be stress-tested safely and repeatedly until the logic was right.
+      </p>
+
+              <iframe width="100%" height="350"
+               src="https://www.youtube.com/embed/-HWE6mL5Ww0" controls alt="Live system demo showing Blynk mobile dashboard with real-time water level percentage and distance readings updating as the JSN-SR04T sensor detects changes in water level"
+              frameborder="0" allowfullscreen>
+             </iframe> 
+
+      <div class="jt-skills">
+        <span class="jt-skill primary">Ladder Logic Programming</span>
+        <span class="jt-skill primary">Timer-Based Sequence Control</span>
+        <span class="jt-skill primary">Process Simulation (Factory IO)</span>
+        <span class="jt-skill">Siemens S7-300</span>
+        <span class="jt-skill">TIA Portal</span>
+        <span class="jt-skill">PLCSim (Virtual PLC)</span>
+        <span class="jt-skill">TON / TOF Timer Blocks</span>
+        <span class="jt-skill">Sequential Function Design</span>
+        <span class="jt-skill">Safety Interlock Logic</span>
+        <span class="jt-skill">Overfill Prevention</span>
+        <span class="jt-skill">Drain Cycle Management</span>
+        <span class="jt-skill">Timeout &amp; Fault Detection</span>
+        <span class="jt-skill">Virtual I/O Mapping</span>
+        <span class="jt-skill">Edge Case Simulation</span>
+        <span class="jt-skill">Control Logic Validation</span>
+      </div>
+
+      <ul class="jt-bullets">
+        <li>Designed a <strong>fully automated fill-and-drain sequence</strong> for an industrial tank using Ladder Logic on a Siemens S7-300 — covering the complete cycle from inlet open, timed fill, level hold, drain activation, and empty confirmation before the next cycle starts.</li>
+        <li>Implemented <strong>multiple coordinated TON/TOF timer blocks</strong> to govern each phase of the sequence independently — ensuring correct timing of fill duration, safety hold periods, and drain completion waits without overlap or race conditions.</li>
+        <li>Engineered explicit <strong>safety interlock conditions</strong> for real-world failure scenarios: overfill prevention if the fill timer expires without level confirmation, drain-busy interlocks blocking premature refill, and defined safe states for mid-sequence power interruption.</li>
+        <li>Validated the complete control program inside <strong>Factory IO</strong> — a 3D industrial process simulator connected live to PLCSim — replicating the physical behaviour of valves, pumps, and tank levels in real time without requiring any hardware, exactly as done in professional pre-deployment validation workflows.</li>
+        <li>Stress-tested all <strong>edge cases and timeout scenarios</strong> in simulation — sensor fault conditions, blocked drain simulation, and sequence restart handling — confirming robust behaviour before any hardware deployment would be considered.</li>
+        <li>Demonstrated that <strong>process simulation is not a shortcut but a methodology</strong>: the combination of TIA Portal, PLCSim, and Factory IO mirrors the engineering workflow used in industrial commissioning environments, where software validation precedes physical installation.</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+<!-- ── END ENTRY: Filling Tank — Timer-Based Process Control ── -->
+
+
+
+  </div>
+</div>
+   
             <div class="seemore_bt"><a href="service.html">See More</a></div>
   </div>
       <!-- portfolio section end -->
