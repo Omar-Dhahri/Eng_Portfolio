@@ -740,7 +740,11 @@ END_IF;
 </div>
 <!-- ── END ENTRY: Filling Tank — Timer-Based Process Control ── -->
 
-
+ <!-- Lightbox overlay -->
+<div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; cursor:pointer;">
+  <span onclick="closeLightbox()" style="position:absolute; top:20px; right:35px; color:white; font-size:40px; font-weight:bold; cursor:pointer;">&times;</span>
+  <img id="lightbox-img" style="max-width:90%; max-height:90vh; border-radius:8px;">
+</div>
 
   </div>
 </div>
@@ -795,5 +799,22 @@ END_IF;
             });
          });
       </script>
+
+	       <!-- Lightbox overlay -->
+      <script>
+function openLightbox(img) {
+  var lightbox = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = img.src;
+  lightbox.style.display = 'flex';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
    </body>
 </html>
