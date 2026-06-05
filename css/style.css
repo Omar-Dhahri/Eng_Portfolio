@@ -48,11 +48,87 @@ body {
     font-weight: normal;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
-
+    padding: 0;
     margin: 0;
+    box-sizing: border-box;
 
 }
 /*------------------------------*/
+
+/* ===== HERO SECTION ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.hero-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    line-height: 0;
+}
+
+.hero-bg-img {
+    width: 100%;
+    display: block;
+    line-height: 0;
+        margin: 0;
+    padding: 0;
+}
+
+.hero-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    line-height: normal;
+}
+
+.hero-text {
+    position: absolute;
+    top: 40%;
+    left: 8%;
+    color: white;
+    line-height: normal;
+}
+
+.hero-icons a {
+    display: grid;
+    background: #b0b3b2;
+    color: #252f2d;
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+}
+
+.hero-icons a:hover {
+    background: #ffffff;
+    color: #252f2d;
+}
+
+/* ===== HERO RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-text {
+        top: 30%;
+        left: 5%;
+    }
+
+    .banner_taital {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .banner_text {
+        font-size: 16px;
+    }
+}
+
+
+
 
 /* SECTION */
 .project {
@@ -926,6 +1002,10 @@ img {
     box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .25);
 }
 
+.navbar {
+    padding: 0px 0px;
+    background-color: transparent !important;
+}
 .navbar-form input {
     border: none !important;
 }
@@ -963,15 +1043,15 @@ button {
 
 /* header section start */
 
+
 .header_section {
     width: 100%;
     float: left;
-    background-image: url(../images/banner-bg.png);
+    background-color: transparent;
     height: auto;
-    background-size: 100%;
-    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
 }
-
 .header_bg {
     background: #000;
 }
@@ -995,7 +1075,7 @@ button {
     padding-left: 20px;
     font-size: 18px;
     color: #fefefd;
-    border-radius: 40px;
+    border-radius: 30px;
     text-transform: uppercase;
 }
 
@@ -1005,7 +1085,7 @@ button {
 }
 
 .navbar {
-    padding: 30px 0px 30px 0px;
+    padding: 20px 0px 20px 0px;
 }
 
 
@@ -1021,10 +1101,11 @@ button {
 }
 
 .banner_taital_main {
-    width: 120%;
+    width: 140%;
     float: left;
     padding-left: 100px;
     padding-top: 100px;
+    padding-right: 0px;
 }
 
 .banner_taital {
@@ -1065,8 +1146,8 @@ button {
     color: #252f2d;
     border-radius: 5px;
     font-size: 18px;
-    margin-right: 5px;
-    width: 35px;
+    margin-right: 10px;
+    width: 30px;
     text-align: center;
     margin-top: 10px;
 }
@@ -1079,7 +1160,7 @@ button {
 .video_bt {
     width: 100%;
     float: left;
-    padding-top: 120px;
+    padding-top: 140px;
     padding-left: 20px;
 }
 
