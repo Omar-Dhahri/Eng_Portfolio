@@ -135,21 +135,32 @@
     .navbar {
         padding: 30px 0px 30px 50px;
     }
+
+    .logo {
+        padding-left: 10px;
+    }
+
     .banner_section {
         padding: 0px 0px 155px 0px;
     }
     .banner_taital_main {
-        padding-left: 50px;
+        padding-left: 60px;
         padding-top: 40px;
+        padding-bottom: 50px;
+        padding-right: 0px;
+
     }
     .banner_taital {
-        font-size: 50px;
+    font-size: 30px;
     }
     .video_bt {
-        padding-top: 30px;
-        padding-left: 50px;
+        padding-top: 10px;
+        padding-left: 80px;
+        padding-bottom: 0px;
+
     }
     .box_main {
+        
         padding: 45px 0px;
     }
     .services_text {
@@ -161,13 +172,17 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    
+    .hero-text {
+        top: 35%;
+        left: 5%;
+    }
+    
     .header_section {
         background-size: cover;
         background: #252f2d!important;
     }
-    .logo {
-        width: auto;
-    }
+
     .navbar-expand-lg {
         padding: 15px 0px;
     }
@@ -193,20 +208,32 @@
         margin-bottom: 1rem;
         display: none;
     }
+
+        .logo {
+        padding-left: 20px;
+    }
+
     .banner_section {
         padding: 30px 0px;
         background-size: 100% 100%;
     }
     .banner_taital {
-        font-size: 40px;
-        line-height: normal;
+        font-size: 25px;
+        line-height: 36px;
+    }
+    .banner_text {
+        font-size: 16px;
     }
     .banner_taital_main {
-        padding-left: 0px;
+        padding-left: 40px;
         padding-top: 50px;
+        padding-right: 0px;
+
     }
     .video_bt {
-        padding-top: 30px;
+        padding-top: 60px;
+        padding-left: 80px;
+
     }
     .services_section {
         padding-top: 90px;
@@ -237,16 +264,29 @@
     .mail_section_1 {
         width: 100%;
     }
+    .hero-navbar .navbar-collapse {
+        background-color: rgba(37, 47, 45, 0.95);
+        padding: 10px;
+        border-radius: 8px;
+    }
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 500px) and (max-width: 767px) {
     .header_section {
         background-size: cover;
         background: #252f2d!important;
     }
-    .logo {
-        width: auto;
+
+    .hero-text {
+        top: 30%;
+        left: 4%;
     }
+
+    .hero-icons a {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
     .navbar-expand-lg {
         padding: 15px 0px;
     }
@@ -255,11 +295,29 @@
         padding: 0px;
     }
     .navbar {
-        padding: 10px 0px;
+        padding: 0px 0px;
     }
+
+    .navbar-toggler span {
+    float: left;
+        width: 25px;
+        height: 20px;
+    margin-top: -2px;
+        margin-left: -5px;
+
+}
+
+
+    .navbar-toggler-icon {
+           padding: 0px 0px;
+
+    }
+
     .navbar-toggler {
         background-color: #fff;
         border: 1px solid #fff;
+        width: 40px;
+        height: 25px;
     }
     .navbar-light .navbar-nav .nav-link {
         padding: 5px 5px 0px 5px;
@@ -272,24 +330,60 @@
         margin-bottom: 1rem;
         display: none;
     }
+
+        .logo {
+        padding-left: 20px;
+    }
+
     .banner_section {
         padding: 30px 0px;
         background-size: 100% 100%;
     }
     .banner_taital {
-        font-size: 26px;
-        line-height: normal;
+        font-size: 20px;
+        line-height: 28px;
     }
     .banner_taital_main {
-        padding-left: 0px;
-        padding-top: 0px;
+        padding-left: 40px;
+        padding-top: 20px;
+        padding-right: 0px; 
     }
+    .banner_text {
+        font-size: 14px;
+    }
+
+    .play_icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .play_icon::before {
+        width: 62px;
+        height: 62px;
+        top: 28px;
+        left: 27px;
+    }
+
+    .play_icon img {
+        width: 55px;
+    }
+
     .video_bt {
         padding-top: 30px;
+        
     }
-    .social_icon {
-        display: none;
+
+    .hero-navbar .navbar-collapse {
+        background-color: rgba(37, 47, 45, 0.95);
+        padding: 10px;
+        border-radius: 8px;
     }
+
+.social_icon {
+    width: 45%;
+    float: right;
+    text-align: right;
+}
     .services_section {
         padding-top: 90px;
     }
@@ -336,13 +430,20 @@
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 500px) {
     .header_section {
         background-size: cover;
         background: #252f2d!important;
     }
-    .logo {
-        width: auto;
+
+    .hero-text {
+        top: 25%;
+        left: 3%;
+    }
+    .hero-navbar .navbar-collapse {
+        background-color: rgba(37, 47, 45, 0.95);
+        padding: 10px;
+        border-radius: 8px;
     }
     .navbar-expand-lg {
         padding: 15px 0px;
@@ -352,12 +453,32 @@
         padding: 0px;
     }
     .navbar {
-        padding: 10px 0px;
+        padding: 0px 0px;
     }
+
+    .navbar-toggler span {
+    float: left;
+        width: 20px;
+        height: 20px;
+    margin-top: -5px;
+        margin-left: -7px;
+
+}
+
+
+    .navbar-toggler-icon {
+           padding: 0px 0px;
+
+    }
+
     .navbar-toggler {
         background-color: #fff;
         border: 1px solid #fff;
+        width: 30px;
+        height: 20px;
     }
+
+
     .navbar-light .navbar-nav .nav-link {
         padding: 5px 5px 0px 5px;
         margin: 0px 0px 0px 0px;
@@ -369,24 +490,60 @@
         margin-bottom: 1rem;
         display: none;
     }
+
+    .logo {
+        padding-left: 20px;
+    }
+
     .banner_section {
         padding: 30px 0px;
         background-size: 100% 100%;
     }
     .banner_taital {
-        font-size: 26px;
-        line-height: normal;
+        font-size: 14px;
+        line-height: 20px;
     }
+
+    .banner_text {
+        font-size: 11px;
+    }
+
     .banner_taital_main {
-        padding-left: 0px;
-        padding-top: 0px;
+        padding-left: 25px;
+        padding-top: 20px;
+        padding-right: 0px;
     }
+
+    .hero-icons {
+    }
+
     .video_bt {
-        padding-top: 30px;
+        padding-top: 10px;
+
     }
-    .social_icon {
-        display: none;
+.play_icon {
+        width: 40px;
+        height: 40px;
+
+}
+    .play_icon img {
+        width: 40px;
     }
+
+    .play_icon::before {
+        width: 40px;
+        height: 40px;
+        top: 20px;
+        left: 20px;
+    }
+
+.social_icon {
+    width: 20%;
+    float: right;
+    text-align: right;
+}
+
+
     .services_section {
         padding-top: 90px;
     }
