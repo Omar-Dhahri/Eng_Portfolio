@@ -264,11 +264,16 @@
     .mail_section_1 {
         width: 100%;
     }
-    .hero-navbar .navbar-collapse {
-        background-color: rgba(37, 47, 45, 0.95);
-        padding: 10px;
-        border-radius: 8px;
-    }
+.hero-navbar .navbar-collapse {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    width: 400px;
+    z-index: 100;
+    background-color: rgba(37, 47, 45, 0.95);
+    border-radius: 8px;
+    padding: 10px;
+}
 }
 
 @media (min-width: 500px) and (max-width: 767px) {
