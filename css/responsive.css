@@ -365,12 +365,14 @@
     .play_icon::before {
         width: 62px;
         height: 62px;
-        top: 28px;
+        top: -70px;
         left: 27px;
     }
 
     .play_icon img {
         width: 55px;
+        top: -97px;
+
     }
 
     .video_bt {
@@ -533,7 +535,7 @@
     }
 
     .video_bt {
-        padding-top: 10px;
+        padding-top: 0px;
 
     }
 .play_icon {
@@ -543,15 +545,16 @@
 }
     .play_icon img {
         width: 40px;
+        top: -45px;
+        left: 7px;
     }
 
     .play_icon::before {
         width: 40px;
         height: 40px;
-        top: 20px;
-        left: 20px;
+        top: -25px;
     }
-
+    
 .social_icon {
     width: 20%;
     float: right;
