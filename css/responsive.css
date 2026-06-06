@@ -373,11 +373,16 @@
         
     }
 
-    .hero-navbar .navbar-collapse {
-        background-color: rgba(37, 47, 45, 0.95);
-        padding: 10px;
-        border-radius: 8px;
-    }
+.hero-navbar .navbar-collapse {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    width: 400px;
+    z-index: 100;
+    background-color: rgba(37, 47, 45, 0.95);
+    border-radius: 8px;
+    padding: 10px;
+}
 
 .social_icon {
     width: 45%;
@@ -440,11 +445,16 @@
         top: 25%;
         left: 3%;
     }
-    .hero-navbar .navbar-collapse {
-        background-color: rgba(37, 47, 45, 0.95);
-        padding: 10px;
-        border-radius: 8px;
-    }
+.hero-navbar .navbar-collapse {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    width: 400px;
+    z-index: 100;
+    background-color: rgba(37, 47, 45, 0.95);
+    border-radius: 8px;
+    padding: 10px;
+}
     .navbar-expand-lg {
         padding: 15px 0px;
     }
