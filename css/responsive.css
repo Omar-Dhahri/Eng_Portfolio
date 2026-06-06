@@ -546,7 +546,7 @@
     .play_icon img {
         width: 40px;
         top: -45px;
-        left: 7px;
+        left: 21px;
     }
 
     .play_icon::before {
