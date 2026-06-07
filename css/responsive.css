@@ -382,7 +382,7 @@
 
 .hero-navbar .navbar-collapse {
     position: absolute;
-    top: 70px;
+    top: 45px;
     right: 15px;
     width: 300px;
     z-index: 100;
@@ -454,9 +454,9 @@
     }
 .hero-navbar .navbar-collapse {
     position: absolute;
-    top: 70px;
+    top: 40px;
     right: 15px;
-    width: 200px;
+    width: 250px;
     z-index: 100;
     background-color: rgba(37, 47, 45, 0.95);
     border-radius: 8px;
