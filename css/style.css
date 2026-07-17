@@ -1137,7 +1137,6 @@ button {
     display: inline-block;
 }
 
-.social_icon li {}
 
 .social_icon li a {
     float: left;
@@ -1409,7 +1408,18 @@ button {
     padding: 90px 0px;
 }
 
-.portfolio_taital {
+
+
+.portfolio_section1 {
+    width: 100%;
+    float: left;
+    background-image: url(../images/portfolio-bg.JPG);
+    height: 500px;
+    background-size: cover;
+    margin-bottom: 410px;
+}
+
+.Yellow_taital {
     width: 100%;
     float: left;
     font-size: 40px;
@@ -1418,11 +1428,14 @@ button {
     text-align: center;
 }
 
-.portfolio_taital_1 {
+.Black_taital {
     color: #292929;
     border-bottom: 5px solid #363636;
 }
-
+.White_taital {
+    color: #fefefd;
+    border-bottom: 5px solid #fefefd;
+}
 .portfolio_section_2 {
     width: 100%;
     float: left;
@@ -1527,10 +1540,26 @@ button {
 
 /* blog section start */
 
-.blog_section {
+.curriculum_section {
+
     width: 100%;
     float: left;
-    background-image: url(../images/blog-bg.png);
+    padding: 90px 0px;
+
+}
+
+.curriculum_section1 {
+    width: 100%;
+    float: left;
+    background-image: url(../images/blog-bg.jpg);
+    height: 550px;
+    background-size: cover;
+    margin-bottom: 410px;
+}
+
+.blog_section0 {
+    width: 100%;
+    float: left;
     height: 550px;
     background-size: cover;
     margin-bottom: 410px;
@@ -1564,6 +1593,12 @@ button {
     float: left;
     padding-top: 150px;
 }
+.blog_section_6 {
+    width: 100%;
+    float: left;
+    padding-top: 90px;
+}
+
 
 .blog_box {
     width: 100%;
@@ -1657,10 +1692,20 @@ button {
 
 /* contact section start */
 
+
 .contact_section {
     width: 100%;
     float: left;
-    padding-bottom: 90px;
+    padding: 90px 0px;
+}
+
+.contact_section1 {
+    width: 100%;
+    float: left;
+    background-image: url(../images/Contacts-bg.JPEG);
+    height: 500px;
+    background-size: cover;
+    margin-bottom: 410px;
 }
 
 .contact_taital {
@@ -1672,9 +1717,19 @@ button {
     text-align: center;
 }
 
+
+.Portfolio_taital {
+    width: 100%;
+    float: left;
+    font-size: 40px;
+    color: #f5c729;
+    font-weight: bold;
+    text-align: center;
+}
+
 .contact_taital_1 {
-    color: #292929;
-    border-bottom: 5px solid #363636;
+    color: #fefefd;
+    border-bottom: 5px solid #fefefd;
 }
 
 .contact_section_2 {
@@ -1749,6 +1804,44 @@ textarea#comment.massage-bt::placeholder {
 
 
 /* contact section end */
+
+/* other section start */
+.PLC_section {
+    width: 100%;
+    float: left;
+    background-image: url(../images/PLC-bg.png);
+    height: 500px;
+    background-size: cover;
+    margin-bottom: 60px;
+}
+
+.IOT_section {
+    width: 100%;
+    float: left;
+    background-image: url(../images/IOT-bg.png);
+    height: 500px;
+    background-size: cover;
+    margin-bottom: 60px;
+}
+
+.Networking_section {
+    width: 100%;
+    float: left;
+    background-image: url(../images/Networking-bg.JPG);
+    height: 500px;
+    background-size: cover;
+    margin-bottom: 60px;
+}
+
+.Electrical_section {
+    width: 100%;
+    float: left;
+    background-image: url(../images/Electrical-bg.png);
+    height: 500px;
+    background-size: cover;
+    margin-bottom: 60px;
+}
+/* other section end */
 
 /* content section start */
 
@@ -1970,4 +2063,3 @@ ul li {
 .jt-gallery img:hover {
   opacity: 0.8;
 }
-
