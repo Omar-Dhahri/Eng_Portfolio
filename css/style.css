@@ -1413,7 +1413,7 @@ button {
 .portfolio_section1 {
     width: 100%;
     float: left;
-    background-image: url(../images/portfolio-bg.JPG);
+    background-image: url(../images/portfolio-bg.jpg);
     height: 500px;
     background-size: cover;
     margin-bottom: 410px;
@@ -1702,7 +1702,7 @@ button {
 .contact_section1 {
     width: 100%;
     float: left;
-    background-image: url(../images/Contacts-bg.JPEG);
+    background-image: url(../images/Contacts-bg.jpeg);
     height: 500px;
     background-size: cover;
     margin-bottom: 410px;
@@ -1827,7 +1827,7 @@ textarea#comment.massage-bt::placeholder {
 .Networking_section {
     width: 100%;
     float: left;
-    background-image: url(../images/Networking-bg.JPG);
+    background-image: url(../images/Networking-bg.jpg);
     height: 500px;
     background-size: cover;
     margin-bottom: 60px;
